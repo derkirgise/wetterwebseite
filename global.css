@@ -1,0 +1,30 @@
+nav {
+    background-color: #5e6c91;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.mybutton {
+    background-color: green;
+}
+
+.main {
+    padding-top: 56px;
+    background-color: white;
+    height: 100vh;
+    opacity: 0.8;
+}
+
+footer {
+    position: absolute;
+    background-color: lightgray;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+}
