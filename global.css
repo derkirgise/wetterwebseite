@@ -12,9 +12,9 @@ nav {
 
 .main {
     padding-top: 56px;
-    background-color: white;
+    background-color: lightgrey;
     height: 100vh;
-    opacity: 0.8;
+    opacity: 1;
 }
 
 footer {
