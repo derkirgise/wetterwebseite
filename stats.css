@@ -1,3 +1,5 @@
+/* Title/ Search */
+
 .title img {
     width: 50px
 }
@@ -13,15 +15,6 @@
 
 .search input {
     background-color: none;
-    padding-right: 36px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-.search input {
-    background-color: none;
-    padding-right: 36px;
     border-radius: 20px;
     border: 2px solid white;
     background-color: transparent;
@@ -41,9 +34,103 @@
     opacity: 0.9;
 }
 
-.search .fa-search {
+.input-icon {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+.icon-input {
+    padding-right: 36px;
+}
+
+
+/* Chart */
+
+.chart-config .card .active {
+    background-color: rgba(0, 102, 204, 0.1);
+}
+
+.chart-config .card {
+    background-color: transparent;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.chart {
+    /* border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: 0.25rem; */
+}
+
+.chart-config .card:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.config-text {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.temp-scheme {
+    height: 100%;
+}
+
+.chart-nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.chart-nav li {
+    display: inline-block !important;
+}
+
+.card-warning {
+    background-color: rgba(252, 255, 100, 0.356);
+}
+
+
+/* Bottom */
+
+.stats-row .card {
+    min-height: 25vh;
+}
+
+.progress {
+    height: 50px;
+    background-color: transparent;
+}
+
+.sun {
+    width: 40%;
+}
+
+.big-stats-text {
+    font-size: 5rem;
+}
+
+.small-stats-text {
+    font-size: 2.5rem;
+}
+
+.progress {
+    height: 100%;
+}
+
+.progress>svg,
+.progressTwo>svg {
+    height: 125px;
+    width: 125px;
+}
+
+.circle-progress-value {
+    stroke-width: 6px;
+    stroke: #34cceb;
+    stroke-linecap: round;
+}
+
+.circle-progress-circle {
+    stroke-width: 2px;
 }

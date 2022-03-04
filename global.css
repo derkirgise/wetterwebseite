@@ -2,7 +2,7 @@ nav {
     background-color: #5e6c91;
 }
 
-.nav-link {
+nav .nav-link {
     color: white !important;
 }
 
@@ -15,7 +15,8 @@ nav {
 .content {
     padding: 15px;
     /* background-color: rgba(255, 255, 255, 1); */
-    background-color: rgba(255, 255, 255, 0.9);
+    /* filter: brightness(50%); */
+    background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(10px);
     /* box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
@@ -24,7 +25,7 @@ nav {
 
 footer {
     position: absolute;
-    background-color: lightgray;
+    background-color: #2a69ae;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -41,7 +42,8 @@ footer a {
 }
 
 body {
-    background-image: url("images/background.jpg");
+    /* background-color: #76acea; */
+    background-image: url("images/test.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

@@ -7,10 +7,14 @@
     <title>Wetter</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
     <link href="global.css" rel="stylesheet">
     <link href="stats.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="scripts/stats.js"></script>
+    <script src="scripts/circle-progress.min.js"></script>
 </head>
 
 <body>
@@ -48,27 +52,127 @@
                 <img src="images/stats/bar-chart-outline.svg">
                 <span class="ms-1">Statistiken</span>
                 <div class="ms-auto">
-                    <i class="fa-solid fa-magnifying-glass"></i>
                     <div class="search">
-                        <input class="form-control" placeholder="Suchen...">
-                        <i class="fas fa-search"></i>
+                        <input class="form-control icon-input" placeholder="Suchen...">
+                        <i class="input-icon fas fa-search"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet.<br> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-            consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
-            eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-            nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim v
+            <h1>Berlin,</h1>
+            <div class="row mt-2">
+                <div class="col d-flex align-items-center justify-content-end">
+                    <h3>am <b>02.03.2022</b> war es <b>bedeckt</b>.</h3>
+                    <div class="btn-group btn-group-sm time-range ms-auto" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio1">-3</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio1">-2</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btnradio3">-1</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="btnradio5"> 0</label>
+                    </div>
+                    <span class="ms-2">Tage</span>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-3 chart-config d-flex flex-column d-none d-md-flex">
+                    <div class="card">
+                        <div class="card-body align-items-center d-flex active">
+                            <i class="fas fa-thermometer-half"></i>
+                            <span class="config-text">Temperatur</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body align-items-center d-flex">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span class="config-text">Luftdruck</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body align-items-center d-flex">
+                            <i class="fas fa-tint"></i>
+                            <span class="config-text">Luftfeuchtigkeit</span>
+                        </div>
+                    </div>
+                    <div class="temp-scheme d-flex justify-content-center align-items-center">
+                        <svg width="80%" height="80%" viewBox="0 0 300 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                            <g>
+                                <circle cx="150.978" cy="312.531" r="51.08"/>
+                            </g>
+                            <path d="M177.661,63.072C177.661,48.345 165.705,36.389 150.978,36.389C136.251,36.389 124.294,48.345 124.294,63.072L124.294,265.36C124.294,280.087 136.251,292.043 150.978,292.043C165.705,292.043 177.661,280.087 177.661,265.36L177.661,63.072Z"/>
+                            <circle cx="150.978" cy="312.531" r="43.05" style="fill:rgb(79,145,220);"/>
+                            <path d="M169.529,63.015C169.529,52.776 161.216,44.464 150.978,44.464C140.739,44.464 132.426,52.776 132.426,63.015L132.426,261.802C132.426,272.041 140.739,280.353 150.978,280.353C161.216,280.353 169.529,272.041 169.529,261.802L169.529,63.015Z" style="fill:white;"/>
+                            <path d="M169.529,93.917C169.529,83.679 161.216,75.366 150.978,75.366C140.739,75.366 132.426,83.679 132.426,93.917L132.426,261.802C132.426,272.041 140.739,280.353 150.978,280.353C161.216,280.353 169.529,272.041 169.529,261.802L169.529,93.917Z" style="fill:rgb(220,79,79);"/>
+                            <rect x="132.426" y="140.276" width="37.103" height="140.077" style="fill:rgb(220,141,79);"/>
+                            <rect x="132.426" y="207.794" width="37.103" height="72.559" style="fill:rgb(79,145,220);"/>
+                            <path d="M132.426,73.341C132.426,72.223 131.519,71.316 130.401,71.316L109.527,71.316C108.409,71.316 107.502,72.223 107.502,73.341L107.502,77.391C107.502,78.509 108.409,79.416 109.527,79.416L130.401,79.416C131.519,79.416 132.426,78.509 132.426,77.391L132.426,73.341Z"/>
+                            <path d="M194.454,138.251C194.454,137.134 193.546,136.226 192.429,136.226L171.554,136.226C170.436,136.226 169.529,137.134 169.529,138.251L169.529,142.301C169.529,143.419 170.436,144.326 171.554,144.326L192.429,144.326C193.546,144.326 194.454,143.419 194.454,142.301L194.454,138.251Z"/>
+                            <path d="M132.426,205.769C132.426,204.652 131.519,203.744 130.401,203.744L109.527,203.744C108.409,203.744 107.502,204.652 107.502,205.769L107.502,209.819C107.502,210.937 108.409,211.844 109.527,211.844L130.401,211.844C131.519,211.844 132.426,210.937 132.426,209.819L132.426,205.769Z"/>
+                            <text x="195.686px" y="152.259px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">15°C</text>
+                            <text x="32.372px" y="87.348px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">22°C</text>
+                            <text x="51.929px" y="219.776px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">7°C</text>
+                        </svg>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <ul class="chart-nav nav nav-tabs d-flex d-md-none">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-thermometer-half"></i> Temperatur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Luftdruck</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="fas fa-tint"></i> Luftfeuchtigkeit</a>
+                        </li>
+                    </ul>
+                    <div id="statsChart" class="chart" width="100vw" height="50vh"></div>
+                </div>
+            </div>
+            <div class="row stats-row mt-4">
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <div class="card card-warning d-flex align-items-center justify-content-center flex-column">
+                        <div class="mt-2 ms-4 me-auto warning">
+                            <i class="fas fa-exclamation-triangle"></i> Frost
+                        </div>
+                        <i class="fas fa-snowflake fa-7x"></i>
+                        <span class="sun-text">5 h</span>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <div class="card" style="position: relative;">
+                        <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                            Luftfeuchtigkeit<br>
+                            <div class="progress mt-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <div class="card" style="position: relative;">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                            UV-Index<br>
+                            <h1>1</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-3 mt-md-0">
+                    <div class="card" style="position: relative;">
+                        <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                            <img class="sun" src="images/stats/sun-outline.svg">
+                            <h1>150h</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-
     <footer>
         <div class="container d-flex flex-row align-items-center">
             <a href="impressum.html">Impressum</a>
