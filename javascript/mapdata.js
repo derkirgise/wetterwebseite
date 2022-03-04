@@ -7,7 +7,7 @@ var simplemaps_countrymap_mapdata={
     border_color: "#ffffff",
 
     //State defaults
-    state_description: "State description",
+    state_description: "",
     state_color: "#88A4BC",
     state_hover_color: "#3B729F",
     state_url: "",
@@ -73,150 +73,71 @@ var simplemaps_countrymap_mapdata={
   state_specific: {
     DEU1572: {
       name: "Nordrhein-Westfalen",
-      description: "7°C"
+      url: "weathermap.html?state=nordrhein-westfalen"
     },
     DEU1573: {
       name: "Baden-Württemberg",
-      description: "7°C"
+      url: "weathermap.html?state=baden-wuerttemberg"
     },
     DEU1574: {
       name: "Hessen",
-      description: "7°C"
+      url: "weathermap.html?state=hessen"
     },
     DEU1575: {
       name: "Bremen",
-      description: "7°C"
+      url: "weathermap.html?state=bremen"
     },
     DEU1576: {
       name: "Niedersachsen",
-      description: "7°C"
+      url: "weathermap.html?state=niedersachsen"
     },
     DEU1577: {
       name: "Thüringen",
-      description: "7°C"
+      url: "weathermap.html?state=thüringen"
     },
     DEU1578: {
       name: "Hamburg",
-      description: "7°C"
+      url: "weathermap.html?state=hamburg"
     },
     DEU1579: {
       name: "Schleswig-Holstein",
-      description: "7°C"
+      url: "weathermap.html?state=schleswig-holstein"
     },
     DEU1580: {
       name: "Rheinland-Pfalz",
-      description: "7°C"
+      url: "weathermap.html?state=rheinland-pfalz"
     },
     DEU1581: {
       name: "Saarland",
-      description: "7°C"
+      url: "weathermap.html?state=saarland"
     },
     DEU1591: {
       name: "Bayern",
-      description: "7°C"
+      url: "weathermap.html?state=bayern"
     },
     DEU1599: {
       name: "Berlin",
-      description: "7°C"
+      url: "weathermap.html?state=berlin"
     },
     DEU1600: {
       name: "Sachsen-Anhalt",
-      description: "7°C"
+      url: "weathermap.html?state=sachsen-anhalt"
     },
     DEU1601: {
       name: "Sachsen",
-      description: "7°C"
+      url: "weathermap.html?state=sachsen"
     },
     DEU3487: {
       name: "Brandenburg",
-      description: "7°C"
+      url: "weathermap.html?state=brandenburg"
     },
     DEU3488: {
       name: "Mecklenburg-Vorpommern",
-      description: "7°C"
+      url: "weathermap.html?state=mecklenburg-vorpommern"
     }
   },
   locations: {
-    "0": {
-      lat: "52.516667",
-      lng: "13.4",
-      name: "Berlin",
-      type: "circle",
-      size: "30",
-      description: "7°C"
-    },
-    "1": {
-      lat: "54.323334",
-      lng: "10.139444",
-      name: "Kiel",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "2": {
-      lat: "54.083336",
-      lng: "12.108811",
-      name: "Rostock",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "3": {
-      lat: "52.373920",
-      lng: "9.735603",
-      name: "Hannover",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "4": {
-      lat: "53.551086",
-      lng: "9.993682",
-      name: "Hamburg",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "5": {
-      lat: "50.935173",
-      lng: "6.953101",
-      name: "Köln",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "6": {
-      lat: "50.110924",
-      lng: "8.682127",
-      name: "Frankfurt",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "7": {
-      lat: "51.050407",
-      lng: "13.737262",
-      name: "Dresden",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    },
-    "8": {
-      lat: "48.1351253",
-      lng: "11.5819806",
-      name: "München",
-      type: "circle",
-      size: "30",
-      description: "7°C"
-    },
-    "9": {
-      lat: "48.783333",
-      lng: "9.183333",
-      name: "Stuttgart",
-      description: "7°C",
-      size: "30",
-      type: "circle"
-    }
+    
   },
   labels: {},
   legend: {
