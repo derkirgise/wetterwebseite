@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
 nav {
     background-color: #5e6c91;
 }
@@ -12,6 +14,49 @@ nav .nav-link {
     padding-bottom: 100px;
 }
 
+/*START FOOTER */
+
+footer{
+    background-color: #5e6c91;
+    padding-top: 3%;
+}
+footer span {
+    color: #96a4b5;
+}
+.footer-links{
+    padding-right: 2%;
+}
+
+.footer-links:last-child{
+    padding-right: 0%;
+}
+.footer-links a{
+    color: white;
+}
+.footer-links a:hover{
+    color: white;
+    text-decoration: underline;
+}
+footer i{
+    font-size: 30px;
+    padding-right: 2%;
+    color: white;
+}
+footer i:last-child{
+    padding-right: 0;
+}
+.impressum{
+    padding: 1% 0;
+}
+.copyright{
+    padding-bottom: 1%;
+}
+.footer-social{
+    padding-top: 2%;
+}
+
+/*END FOOTER */
+
 .content {
     padding: 15px;
     /* background-color: rgba(255, 255, 255, 1); */
@@ -21,15 +66,6 @@ nav .nav-link {
     /* box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75); */
-}
-
-footer {
-    position: absolute;
-    background-color: #2a69ae;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
 }
 
 footer .container {
