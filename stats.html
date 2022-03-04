@@ -10,12 +10,13 @@
     <link href="global.css" rel="stylesheet">
     <link href="stats.css" rel="stylesheet">
 
+    <script src="javascript/global.js"></script>
+    <script src="javascript/api.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="javascript/stats.js"></script>
     <script src="javascript/circle-progress.min.js"></script>
-    <script src="javascript/global.js"></script>
 </head>
 
 <body>
@@ -61,43 +62,43 @@
             </div>
         </div>
         <div class="content">
-            <h1>Berlin,</h1>
+            <h1 id="locationName">Berlin,</h1>
             <div class="row mt-2">
                 <div class="col d-flex align-items-center justify-content-end">
-                    <h3>am <b>02.03.2022</b> war es <b>bedeckt</b>.</h3>
+                    <h3>am <b id="historyDate">02.03.2022</b> war es <b id="weatherCondition"></b>.</h3>
                     <div class="btn-group btn-group-sm time-range ms-auto" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio1">-3</label>
+                        <label class="btn btn-outline-primary" for="btnradio1">Vor 3 Tagen</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio1">-2</label>
+                        <label class="btn btn-outline-primary" for="btnradio1">Vor 2 Tagen</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio3">-1</label>
+                        <label class="btn btn-outline-primary" for="btnradio3">Gestern</label>
 
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio5"> 0</label>
+                        <label class="btn btn-outline-primary" for="btnradio5"> Heute</label>
                     </div>
-                    <span class="ms-2">Tage</span>
+                    <!-- <span class="ms-2">Tage</span> -->
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-md-3 chart-config d-flex flex-column d-none d-md-flex">
                     <div class="card">
-                        <div class="card-body align-items-center d-flex active">
-                            <i class="fas fa-thermometer-half"></i>
+                        <div id="c-temperature" class="card-body align-items-center d-flex active" onclick="showTemperature()">
+                            <image src="images/Icons/tempCold.png"></image>
                             <span class="config-text">Temperatur</span>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body align-items-center d-flex">
-                            <i class="fas fa-tachometer-alt"></i>
+                        <div id="c-pressure" class="card-body align-items-center d-flex" onclick="showPressure()">
+                            <image src="images/Icons/dropProcentage.png"></image>
                             <span class="config-text">Luftdruck</span>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-body align-items-center d-flex">
-                            <i class="fas fa-tint"></i>
+                        <div id="c-humidity" class="card-body align-items-center d-flex" onclick="showHumidity()">
+                            <image src="images/Icons/barometer.png"></image>
                             <span class="config-text">Luftfeuchtigkeit</span>
                         </div>
                     </div>

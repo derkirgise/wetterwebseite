@@ -48,8 +48,9 @@
 
 /* Chart */
 
-.chart-config .card .active {
-    background-color: rgba(0, 102, 204, 0.1);
+.chart-config img {
+    width: 30px;
+    height: 30px;
 }
 
 .chart-config .card {
@@ -58,13 +59,12 @@
     cursor: pointer;
 }
 
-.chart {
-    /* border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: 0.25rem; */
+.chart-config .card .active {
+    background-color: rgba(0, 102, 204, 0.377);
 }
 
 .chart-config .card:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(139, 156, 255, 0.753);
 }
 
 .config-text {
