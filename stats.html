@@ -15,17 +15,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="javascript/stats.js"></script>
     <script src="javascript/circle-progress.min.js"></script>
+    <script src="javascript/stats.js"></script>
 </head>
 
-<body>
+<body class="no-js">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="index.html">
+                <svg width="100px" viewBox="0 0 300 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+                    <rect id="ArtBoard1" x="0" y="0" width="300" height="160" style="fill:none;" />
+                    <g>
+                        <path
+                            d="M234.531,59.192C225.584,48.904 212.4,42.4 197.699,42.4C197.068,42.4 196.453,42.472 195.829,42.494C185.844,20.29 163.576,4.805 137.651,4.805C105.619,4.805 79.18,28.425 74.604,59.192C70.79,58.028 66.751,57.393 62.565,57.393C39.757,57.393 21.265,75.885 21.265,98.687C21.265,115.078 30.818,129.242 44.66,135.914"
+                            style="fill:none;fill-rule:nonzero;stroke:rgb(6,146,205);stroke-width:7.37px;" />
+                    </g>
+                    <g>
+                        <text x="58.502px" y="122.448px"
+                            style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:74.392px;">W<tspan
+                                x="125.084px 163.987px " y="122.448px 122.448px ">et</tspan>te<tspan x="253.308px "
+                                y="122.448px ">r</tspan></text>
+                        <text x="57.377px" y="149.881px"
+                            style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:31.078px;">by Superg<tspan
+                                x="196.925px " y="149.881px ">r</tspan>uppe</text>
+                    </g>
+                </svg>
+
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -48,6 +67,10 @@
         </div>
     </nav>
 
+    <noscript class="no-js-info">
+        <div class="container d-flex flex-column justify-content-center align-items-center"><i class="bi bi-filetype-js" style="font-size: 100px;"></i>Bitte JavaScript aktivieren</div>
+    </noscript>
+
     <main class="container main">
         <div class="title">
             <div class="d-flex flex-row align-items-center">
@@ -62,122 +85,195 @@
             </div>
         </div>
         <div class="content">
-            <h1 id="locationName">Berlin,</h1>
+            <div class="row">
+                <div class="col-3 col-lg-1 d-flex align-items-center justify-content-center">
+                    <img id="conditionIcon">
+                </div>
+
+                <div class="col-9 col-lg-11">
+                    <h3 id="locationName">Berlin,</h3>
+                    <h5>den <b id="historyDate">02.03.2022</b>, <span id="weatherCondition"></span>.</h4>
+                        <!-- <span class="ms-2">Tage</span> -->
+                </div>
+            </div>
             <div class="row mt-2">
-                <div class="col d-flex align-items-center justify-content-end">
-                    <h3>am <b id="historyDate">02.03.2022</b> war es <b id="weatherCondition"></b>.</h3>
-                    <div class="btn-group btn-group-sm time-range ms-auto" role="group" aria-label="Basic radio toggle button group">
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio1">Vor 3 Tagen</label>
+                <div class="btn-group btn-group-sm time-range ms-auto" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectThreeDaysBefore" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-3">
+                    <label class="btn btn-outline-primary" for="timeselectThreeDaysBefore">Vor 3 Tagen</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio1">Vor 2 Tagen</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectTwoDaysBefore" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-2">
+                    <label class="btn btn-outline-primary" for="timeselectTwoDaysBefore">Vor 2 Tagen</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                        <label class="btn btn-outline-primary" for="btnradio3">Gestern</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectYesterday" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-1">
+                    <label class="btn btn-outline-primary" for="timeselectYesterday">Gestern</label>
 
-                        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" checked>
-                        <label class="btn btn-outline-primary" for="btnradio5"> Heute</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectToday" autocomplete="off" checked onclick="onChangeTimeSelection(event)" data-dayOffset="0">
+                    <label class="btn btn-outline-primary" for="timeselectToday"> Heute</label>
+                </div>
+                <noscript>
+                    Ohne Skript können keine Daten geladen werden!
+                </noscript>
+                <div class="row mt-4">
+                    <aside class="col-lg-3 d-flex flex-column order-2 order-lg-1">
+                        <div class="chart-config d-none d-lg-block">
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex active c-temperature" onclick="showTemperature()">
+                                    <image src="images/Icons/tempCold.png"></image>
+                                    <span class="config-text">Temperatur</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex c-pressure" onclick="showPressure()">
+                                    <image src="images/Icons/dropProcentage.png"></image>
+                                    <span class="config-text">Luftdruck</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex c-humidity" onclick="showHumidity()">
+                                    <image src="images/Icons/barometer.png"></image>
+                                    <span class="config-text">Luftfeuchtigkeit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col">
+                                <svg width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+                                    <defs>
+                                        <clipPath id="round-corner">
+                                            <rect id="round-corner-rect" x="182.275" y="69.118" ry="20"
+                                                clip-path="url(#round-corner)" width="34.619" height="205.344" />
+                                        </clipPath>
+                                    </defs>
+                                    <rect id="ArtBoard1" x="0" y="0" width="400" height="400" style="fill:none;" />
+                                    <g id="Thermometer-Icon" serif:id="Thermometer Icon">
+                                        <path class="temp-color"
+                                            d="M216.809,259.462L182.36,259.462C173.07,265.233 166.862,275.512 166.862,287.249C166.862,305.323 181.516,319.972 199.585,319.972C217.653,319.972 232.308,305.323 232.308,287.249C232.308,275.512 226.1,265.233 216.809,259.462Z"
+                                            style="fill:#90D2EA;fill-rule:nonzero;" />
+                                        <rect id="varTemp" class="temp-color" x="182.275" y="260.462" width="34.619" height="190.344"
+                                            style="fill:#90D2EA;" clip-path="url(#round-corner)" />
+                                        <g opacity="0.1">
+                                            <path
+                                                d="M210.492,303.613C192.424,303.613 177.769,288.959 177.769,270.89C177.769,267.722 178.244,264.662 179.084,261.766C171.639,267.765 166.862,276.944 166.862,287.252C166.862,305.32 181.516,319.975 199.585,319.975C214.485,319.975 227.039,310.005 230.993,296.376C225.381,300.897 218.259,303.613 210.492,303.613"
+                                                style="fill:rgb(0,0,100);fill-rule:nonzero;" />
+                                        </g>
+                                        <path
+                                            d="M200.896,68.169C209.867,68.84 216.946,76.339 216.946,85.482L216.946,210.883C216.615,210.904 216.282,210.914 215.946,210.914C206.947,210.914 199.585,203.551 199.585,194.552L199.585,74.568C199.585,72.301 200.053,70.137 200.896,68.169Z"
+                                            style="fill:white;fill-opacity:0.5;fill-rule:nonzero;" />
+                                        <path
+                                            d="M216.946,245.492L216.946,258.373C226.737,264.274 233.308,274.99 233.308,287.249C233.308,290.918 232.722,294.451 231.638,297.757C230.086,298.032 228.487,298.175 226.854,298.175C211.79,298.175 199.585,285.97 199.585,270.906C199.585,259.337 206.784,249.454 216.946,245.492Z"
+                                            style="fill:white;fill-opacity:0.5;fill-rule:nonzero;" />
+                                        <path
+                                            d="M215.946,258.944L215.946,85.479C215.946,76.447 208.616,69.118 199.585,69.118C190.553,69.118 183.223,76.447 183.223,85.479L183.223,258.944C173.455,264.605 166.862,275.152 166.862,287.249C166.862,305.323 181.516,319.972 199.585,319.972C217.653,319.972 232.308,305.323 232.308,287.249C232.308,275.152 225.714,264.605 215.946,258.944Z"
+                                            style="fill:none;fill-rule:nonzero;stroke:rgb(46,67,105);stroke-width:2px;" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="col">
+                                <span id="minTemp"></span><br>
+                                <span id="maxTemp"></span><br>
+                                <span id="avgTemp"></span>
+                            </div>
+                        </div>
+                        <div class="side-stats">
+                            <div class="row">
+                                <div class="col text-end">
+                                    <img src="images/Icons/sunrise1.png">
+                                </div>
+                                <div class="col">
+                                    <span id="sunrise">-</span>
+                                </div>
+                                <div class="col text-end">
+                                    <img src="images/Icons/sunset1.png">
+                                </div>
+                                <div class="col">
+                                    <span id="sunset">-</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-end">
+                                    <img src="images/Icons/moonrise.png">
+                                </div>
+                                <div class="col">
+                                    <span id="moonrise">-</span>
+                                </div>
+                                <div class="col text-end">
+                                    <img src="images/Icons/moonset.png">
+                                </div>
+                                <div class="col">
+                                    <span id="moonset">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mt-3">
+                            <div class="col text-center">
+                                <img src="images/Icons/moon.png" width="50px" height="50px">
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                Vollmond
+                            </div>
+                        </div> -->
+                    </aside>
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <ul class="chart-nav nav nav-tabs d-flex d-lg-none">
+                            <li class="nav-item">
+                                <a class="nav-link active c-temperature" aria-current="page" onclick="showTemperature()">
+                                    <image src="images/Icons/tempCold.png"></image> Temperatur
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link c-pressure" onclick="showPressure()">
+                                    <image src="images/Icons/dropProcentage.png"></image> Luftdruck
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link c-humidity" onclick="showHumidity()">
+                                    <image src="images/Icons/barometer.png"></image> Luftfeuchtigkeit
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="statsChart" class="chart" width="100vw" height="50vh"></div>
                     </div>
-                    <!-- <span class="ms-2">Tage</span> -->
+                </div>
+                <div class="row stats-row mt-4 averagestats">
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card card-warning d-flex align-items-center justify-content-center flex-column frostHoursCard">
+                            <img src="images/Icons/snowCrystal.png">
+                            <div class="warning">
+                                Froststunden
+                            </div>
+                            <h3 id="frostHours">-</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                                <div class="progress mt-1"></div>
+                                Luftfeuchtigkeit<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5 id="uvIndex">1</h5>
+                                UV-Index<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                                <img class="sun" src="images/Icons/cloudRain4.png"> Niederschlag
+                                <h5 id="precipitationSum">-</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-3 chart-config d-flex flex-column d-none d-md-flex">
-                    <div class="card">
-                        <div id="c-temperature" class="card-body align-items-center d-flex active" onclick="showTemperature()">
-                            <image src="images/Icons/tempCold.png"></image>
-                            <span class="config-text">Temperatur</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div id="c-pressure" class="card-body align-items-center d-flex" onclick="showPressure()">
-                            <image src="images/Icons/dropProcentage.png"></image>
-                            <span class="config-text">Luftdruck</span>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div id="c-humidity" class="card-body align-items-center d-flex" onclick="showHumidity()">
-                            <image src="images/Icons/barometer.png"></image>
-                            <span class="config-text">Luftfeuchtigkeit</span>
-                        </div>
-                    </div>
-                    <div class="temp-scheme d-flex justify-content-center align-items-center">
-                        <svg width="80%" height="80%" viewBox="0 0 300 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                            <g>
-                                <circle cx="150.978" cy="312.531" r="51.08"/>
-                            </g>
-                            <path d="M177.661,63.072C177.661,48.345 165.705,36.389 150.978,36.389C136.251,36.389 124.294,48.345 124.294,63.072L124.294,265.36C124.294,280.087 136.251,292.043 150.978,292.043C165.705,292.043 177.661,280.087 177.661,265.36L177.661,63.072Z"/>
-                            <circle cx="150.978" cy="312.531" r="43.05" style="fill:rgb(79,145,220);"/>
-                            <path d="M169.529,63.015C169.529,52.776 161.216,44.464 150.978,44.464C140.739,44.464 132.426,52.776 132.426,63.015L132.426,261.802C132.426,272.041 140.739,280.353 150.978,280.353C161.216,280.353 169.529,272.041 169.529,261.802L169.529,63.015Z" style="fill:white;"/>
-                            <path d="M169.529,93.917C169.529,83.679 161.216,75.366 150.978,75.366C140.739,75.366 132.426,83.679 132.426,93.917L132.426,261.802C132.426,272.041 140.739,280.353 150.978,280.353C161.216,280.353 169.529,272.041 169.529,261.802L169.529,93.917Z" style="fill:rgb(220,79,79);"/>
-                            <rect x="132.426" y="140.276" width="37.103" height="140.077" style="fill:rgb(220,141,79);"/>
-                            <rect x="132.426" y="207.794" width="37.103" height="72.559" style="fill:rgb(79,145,220);"/>
-                            <path d="M132.426,73.341C132.426,72.223 131.519,71.316 130.401,71.316L109.527,71.316C108.409,71.316 107.502,72.223 107.502,73.341L107.502,77.391C107.502,78.509 108.409,79.416 109.527,79.416L130.401,79.416C131.519,79.416 132.426,78.509 132.426,77.391L132.426,73.341Z"/>
-                            <path d="M194.454,138.251C194.454,137.134 193.546,136.226 192.429,136.226L171.554,136.226C170.436,136.226 169.529,137.134 169.529,138.251L169.529,142.301C169.529,143.419 170.436,144.326 171.554,144.326L192.429,144.326C193.546,144.326 194.454,143.419 194.454,142.301L194.454,138.251Z"/>
-                            <path d="M132.426,205.769C132.426,204.652 131.519,203.744 130.401,203.744L109.527,203.744C108.409,203.744 107.502,204.652 107.502,205.769L107.502,209.819C107.502,210.937 108.409,211.844 109.527,211.844L130.401,211.844C131.519,211.844 132.426,210.937 132.426,209.819L132.426,205.769Z"/>
-                            <text x="195.686px" y="152.259px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">15°C</text>
-                            <text x="32.372px" y="87.348px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">22°C</text>
-                            <text x="51.929px" y="219.776px" style="font-family:'SegoeUI-Semibold', 'Segoe UI', sans-serif;font-weight:600;font-size:34.059px;">7°C</text>
-                        </svg>
-                    </div>
-
-                </div>
-                <div class="col-md-9">
-                    <ul class="chart-nav nav nav-tabs d-flex d-md-none">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-thermometer-half"></i> Temperatur</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> Luftdruck</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fas fa-tint"></i> Luftfeuchtigkeit</a>
-                        </li>
-                    </ul>
-                    <div id="statsChart" class="chart" width="100vw" height="50vh"></div>
-                </div>
-            </div>
-            <div class="row stats-row mt-4">
-                <div class="col-md-3 mt-3 mt-md-0">
-                    <div class="card card-warning d-flex align-items-center justify-content-center flex-column">
-                        <div class="mt-2 ms-4 me-auto warning">
-                            <i class="fas fa-exclamation-triangle"></i> Frost
-                        </div>
-                        <i class="fas fa-snowflake fa-7x"></i>
-                        <span class="sun-text">5 h</span>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mt-md-0">
-                    <div class="card" style="position: relative;">
-                        <div class="card-body d-flex align-items-center justify-content-center flex-column">
-                            Luftfeuchtigkeit<br>
-                            <div class="progress mt-1"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mt-md-0">
-                    <div class="card" style="position: relative;">
-                        <div class="card-body d-flex flex-column align-items-center justify-content-center">
-                            UV-Index<br>
-                            <h1>1</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mt-3 mt-md-0">
-                    <div class="card" style="position: relative;">
-                        <div class="card-body d-flex align-items-center justify-content-center flex-column">
-                            <img class="sun" src="images/stats/sun-outline.svg">
-                            <h1>150h</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
     <footer>
         <ul class="nav d-flex  justify-content-center">
-            <li class="nav-item footer-links" ><a href="index.html">HOME</a></li>
+            <li class="nav-item footer-links"><a href="index.html">HOME</a></li>
             <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
             <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
             <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
