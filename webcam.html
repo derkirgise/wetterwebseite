@@ -2,123 +2,203 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wetter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetter</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link href="global.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link href="global.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/weather.html">Wetter vor Ort</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/weathermap.html">Wetterkarte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/webcam.html">Live-Webcam</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/stats.html">Statistik</a>
-                    </li>
-                </ul>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">Wetter vor Ort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weathermap.html">Wetterkarte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="webcam.html">Live-Webcam</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stats.html">Statistik</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main class="container main">
+    <div class="background"></div>
+    <div class="content">
+      <h1 class ="d-flex justify-content-center">
+       Live-Wetterwebcam
+      </h1>
+
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          Bitte wähle dein Bundesland:
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><button type="button" onclick="bw()" class="btn btn-success btn-sm">Baden-Württemberg</button></li>
+          <li><button type="button" onclick="by()" class="btn btn-success btn-sm">Bayern</button></li>
+          <li><button type="button" onclick="be()" class="btn btn-success btn-sm">Berlin</button></li>
+          <li><button type="button" onclick="bb()" class="btn btn-success btn-sm">Brandenburg</button></li>
+          <li><button type="button" onclick="hb()" class="btn btn-success btn-sm">Bremen</button></li>
+          <li><button type="button" onclick="hh()" class="btn btn-success btn-sm">Hamburg</button></li>
+          <li><button type="button" onclick="he()" class="btn btn-success btn-sm">Hessen</button></li>
+          <li><button type="button" onclick="mv()" class="btn btn-success btn-sm">Mecklenburg-Vorpommern</button></li>
+          <li><button type="button" onclick="ni()" class="btn btn-success btn-sm">Niedersachsen</button></li>
+          <li><button type="button" onclick="nw()" class="btn btn-success btn-sm">Nordrhein-Westfalen</button></li>
+          <li><button type="button" onclick="rp()" class="btn btn-success btn-sm">Rheinland-Pfalz</button></li>
+          <li><button type="button" onclick="sl()" class="btn btn-success btn-sm">Saarland</button></li>
+          <li><button type="button" onclick="sn()" class="btn btn-success btn-sm">Sachsen</button></li>
+          <li><button type="button" onclick="st()" class="btn btn-success btn-sm">Sachsen-Anhalt</button></li>
+          <li><button type="button" onclick="sh()" class="btn btn-success btn-sm">Schleswig-Holstein</button></li>
+          <li><button type="button" onclick="th()" class="btn btn-success btn-sm">Thüringen</button></li>
+        </ul>
+      </div>
+
+      <br>
+
+
+
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne">
+              Live Ansicht
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+            aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body d-flex justify-content-center">
+      
+                <div id="mainVid" class="ratio ratio-16x9">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/vBG2O907OM8?autoplay=1&mute=1"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                </div>
+              
             </div>
+          </div>
         </div>
-    </nav>
-
-
-    <main class="container main">
-        <div class="background"></div>
-        <div class="foreground">
-            <h1><center>Live-Wetterwebcam</center></h1>
-
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                      Live Ansicht
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                     <center>
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/vBG2O907OM8" title="YouTube video" allow="fullscreen; autoplay;"></iframe>
-                          </div>
-                     </center>
-                    </div>
-                  </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseTwo">
+              Standort der Übertragung
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body d-flex justify-content-center">
+              
+                <div id="mainMap" class="ratio ratio-21x9">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1900.5070450754424!2d9.468803995593511!3d47.65095256288142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b00ff89def753%3A0x86842a080d23708b!2sGraf-Zeppelin-Haus!5e0!3m2!1sen!2spt!4v1646134340236!5m2!1sen!2spt"
+                    width="300" height="200" style="border:0;" loading="lazy"></iframe>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Standort der Übertragung
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                    <div class="accordion-body">
-                        <center>
-                            <div class="ratio ratio-21x9">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1900.5070450754424!2d9.468803995593511!3d47.65095256288142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b00ff89def753%3A0x86842a080d23708b!2sGraf-Zeppelin-Haus!5e0!3m2!1sen!2spt!4v1646134340236!5m2!1sen!2spt" width="400" height="300" style="border:0;" loading="lazy"></iframe>
-                            </div>
-                        
-                        </center>
-                    </div>
-                  </div>
-                </div>
-                
 
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            Andere Webcams: <br>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                          Biberach Marktplatz, Baden-Württemberg
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/55sS4BroQGw" title="YouTube video" allow="fullscreen; autoplay;"></iframe>
-                        </div>
-                      </div>
-                      <div class="col">
-                          Flughafen Stuttgart, Baden-Württemberg
-                        <div class="ratio ratio-16x9">
-                            <img id="live" class="ourCam jch-lazyloaded" style="-webkit-user-select: none;" src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0&amp;1646134870405" data-src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0" width="100%" height="100%">
-                        </div>
-                      </div>
-                      <div class="col">
-                        Bad Langensalza, Thüringen
-                        <div class="ratio ratio-16x9">
-                            <iframe width="923" height="544" src="https://www.youtube.com/embed/huTfRXMDFTk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
+              
+            </div>
+          </div>
         </div>
-    </main>
+      </div>
+
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            Andere Webcams: <br>
+          </div>
+          <div class="row">
+            <div class="col">
+              Biberach Marktplatz, Baden-Württemberg
+              <div id="more1" class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/55sS4BroQGw?autoplay=1&mute=1" title="YouTube video"
+                  allow="fullscreen; autoplay;"></iframe>
+              </div>
+            </div>
+            <div class="col">
+              Flughafen Stuttgart, Baden-Württemberg
+              <div id="more2" class="ratio ratio-16x9">
+                <img id="live" class="ourCam jch-lazyloaded"
+                  src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0&amp;1646134870405"
+                  data-src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0"
+                  alt="Livestream des Wetters am Flughafen Stuttgart" width="100%" height="100%">
+              </div>
+            </div>
+            <div class="col">
+              Bad Langensalza, Thüringen
+              <div id="more3" class="ratio ratio-16x9">
+                <iframe width="923" height="544" src="https://www.youtube.com/embed/huTfRXMDFTk?autoplay=1&mute=1"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>Impressum</p>
+    </div>
+  </footer>
+</body>
+</html>
+
     <footer>
-        <div class="container">
-                <p>Impressum</p>
-        </div>
-    </footer>
+      <ul class="nav d-flex  justify-content-center">
+          <li class="nav-item footer-links" ><a href="index.html">HOME</a></li>
+          <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
+          <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
+          <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
+          <li class="nav-item footer-links"><a href="stats.html">STATISTIK</a></li>
+      </ul>
+      <div class="d-flex justify-content-center footer-social">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-facebook"></i>
+      </div>
+      <div class="text-center impressum">
+          <span>David Heftig Marienstraße 20</span><br>
+          <span>89518 Heidenheim</span><br>
+          <span>deftig@suppergruppe.de</span>
+      </div>
+      <div class="d-flex justify-content-center copyright">
+          <span>© 2022 suppergruppe, Inc. All rights reserved.</span>
+      </div>
+  </footer>
 </body>
 
 </html>

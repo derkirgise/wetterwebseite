@@ -7,19 +7,44 @@
     <title>Wetter</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
     <link href="global.css" rel="stylesheet">
     <link href="stats.css" rel="stylesheet">
+
+    <script src="javascript/global.js"></script>
+    <script src="javascript/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="javascript/circle-progress.min.js"></script>
+    <script src="javascript/stats.js"></script>
 </head>
 
-<body>
+<body class="no-js">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">LOGO</a>
+            <a class="navbar-brand" href="index.html">
+                <svg width="100px" viewBox="0 0 300 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+                    <rect id="ArtBoard1" x="0" y="0" width="300" height="160" style="fill:none;" />
+                    <g>
+                        <path
+                            d="M234.531,59.192C225.584,48.904 212.4,42.4 197.699,42.4C197.068,42.4 196.453,42.472 195.829,42.494C185.844,20.29 163.576,4.805 137.651,4.805C105.619,4.805 79.18,28.425 74.604,59.192C70.79,58.028 66.751,57.393 62.565,57.393C39.757,57.393 21.265,75.885 21.265,98.687C21.265,115.078 30.818,129.242 44.66,135.914"
+                            style="fill:none;fill-rule:nonzero;stroke:rgb(6,146,205);stroke-width:7.37px;" />
+                    </g>
+                    <g>
+                        <text x="58.502px" y="122.448px"
+                            style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:74.392px;">W<tspan
+                                x="125.084px 163.987px " y="122.448px 122.448px ">et</tspan>te<tspan x="253.308px "
+                                y="122.448px ">r</tspan></text>
+                        <text x="57.377px" y="149.881px"
+                            style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:31.078px;">by Superg<tspan
+                                x="196.925px " y="149.881px ">r</tspan>uppe</text>
+                    </g>
+                </svg>
+
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -42,37 +67,230 @@
         </div>
     </nav>
 
+    <noscript class="no-js-info">
+        <div class="container d-flex flex-column justify-content-center align-items-center"><i class="bi bi-filetype-js" style="font-size: 100px;"></i>Bitte JavaScript aktivieren</div>
+    </noscript>
+
     <main class="container main">
         <div class="title">
             <div class="d-flex flex-row align-items-center">
                 <img src="images/stats/bar-chart-outline.svg">
                 <span class="ms-1">Statistiken</span>
                 <div class="ms-auto">
-                    <i class="fa-solid fa-magnifying-glass"></i>
                     <div class="search">
-                        <input class="form-control" placeholder="Suchen...">
-                        <i class="fas fa-search"></i>
+                        <input class="form-control icon-input" placeholder="Suchen...">
+                        <i class="input-icon fas fa-search"></i>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-            sanctus est Lorem ipsum dolor sit amet.<br> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo
-            duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-            consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-            elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel
-            eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-            nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim v
-        </div>
-    </main>
+            <div class="row">
+                <div class="col-3 col-lg-1 d-flex align-items-center justify-content-center">
+                    <img id="conditionIcon">
+                </div>
 
+                <div class="col-9 col-lg-11">
+                    <h3 id="locationName">Berlin,</h3>
+                    <h5>den <b id="historyDate">02.03.2022</b>, <span id="weatherCondition"></span>.</h4>
+                        <!-- <span class="ms-2">Tage</span> -->
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="btn-group btn-group-sm time-range ms-auto" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectThreeDaysBefore" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-3">
+                    <label class="btn btn-outline-primary" for="timeselectThreeDaysBefore">Vor 3 Tagen</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectTwoDaysBefore" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-2">
+                    <label class="btn btn-outline-primary" for="timeselectTwoDaysBefore">Vor 2 Tagen</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectYesterday" autocomplete="off" onclick="onChangeTimeSelection(event)" data-dayOffset="-1">
+                    <label class="btn btn-outline-primary" for="timeselectYesterday">Gestern</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="timeselectToday" autocomplete="off" checked onclick="onChangeTimeSelection(event)" data-dayOffset="0">
+                    <label class="btn btn-outline-primary" for="timeselectToday"> Heute</label>
+                </div>
+                <noscript>
+                    Ohne Skript können keine Daten geladen werden!
+                </noscript>
+                <div class="row mt-4">
+                    <aside class="col-lg-3 d-flex flex-column order-2 order-lg-1">
+                        <div class="chart-config d-none d-lg-block">
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex active c-temperature" onclick="showTemperature()">
+                                    <image src="images/Icons/tempCold.png"></image>
+                                    <span class="config-text">Temperatur</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex c-pressure" onclick="showPressure()">
+                                    <image src="images/Icons/dropProcentage.png"></image>
+                                    <span class="config-text">Luftdruck</span>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body align-items-center d-flex c-humidity" onclick="showHumidity()">
+                                    <image src="images/Icons/barometer.png"></image>
+                                    <span class="config-text">Luftfeuchtigkeit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col">
+                                <svg width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+                                    <defs>
+                                        <clipPath id="round-corner">
+                                            <rect id="round-corner-rect" x="182.275" y="69.118" ry="20"
+                                                clip-path="url(#round-corner)" width="34.619" height="205.344" />
+                                        </clipPath>
+                                    </defs>
+                                    <rect id="ArtBoard1" x="0" y="0" width="400" height="400" style="fill:none;" />
+                                    <g id="Thermometer-Icon" serif:id="Thermometer Icon">
+                                        <path class="temp-color"
+                                            d="M216.809,259.462L182.36,259.462C173.07,265.233 166.862,275.512 166.862,287.249C166.862,305.323 181.516,319.972 199.585,319.972C217.653,319.972 232.308,305.323 232.308,287.249C232.308,275.512 226.1,265.233 216.809,259.462Z"
+                                            style="fill:#90D2EA;fill-rule:nonzero;" />
+                                        <rect id="varTemp" class="temp-color" x="182.275" y="260.462" width="34.619" height="190.344"
+                                            style="fill:#90D2EA;" clip-path="url(#round-corner)" />
+                                        <g opacity="0.1">
+                                            <path
+                                                d="M210.492,303.613C192.424,303.613 177.769,288.959 177.769,270.89C177.769,267.722 178.244,264.662 179.084,261.766C171.639,267.765 166.862,276.944 166.862,287.252C166.862,305.32 181.516,319.975 199.585,319.975C214.485,319.975 227.039,310.005 230.993,296.376C225.381,300.897 218.259,303.613 210.492,303.613"
+                                                style="fill:rgb(0,0,100);fill-rule:nonzero;" />
+                                        </g>
+                                        <path
+                                            d="M200.896,68.169C209.867,68.84 216.946,76.339 216.946,85.482L216.946,210.883C216.615,210.904 216.282,210.914 215.946,210.914C206.947,210.914 199.585,203.551 199.585,194.552L199.585,74.568C199.585,72.301 200.053,70.137 200.896,68.169Z"
+                                            style="fill:white;fill-opacity:0.5;fill-rule:nonzero;" />
+                                        <path
+                                            d="M216.946,245.492L216.946,258.373C226.737,264.274 233.308,274.99 233.308,287.249C233.308,290.918 232.722,294.451 231.638,297.757C230.086,298.032 228.487,298.175 226.854,298.175C211.79,298.175 199.585,285.97 199.585,270.906C199.585,259.337 206.784,249.454 216.946,245.492Z"
+                                            style="fill:white;fill-opacity:0.5;fill-rule:nonzero;" />
+                                        <path
+                                            d="M215.946,258.944L215.946,85.479C215.946,76.447 208.616,69.118 199.585,69.118C190.553,69.118 183.223,76.447 183.223,85.479L183.223,258.944C173.455,264.605 166.862,275.152 166.862,287.249C166.862,305.323 181.516,319.972 199.585,319.972C217.653,319.972 232.308,305.323 232.308,287.249C232.308,275.152 225.714,264.605 215.946,258.944Z"
+                                            style="fill:none;fill-rule:nonzero;stroke:rgb(46,67,105);stroke-width:2px;" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="col">
+                                <span id="minTemp"></span><br>
+                                <span id="maxTemp"></span><br>
+                                <span id="avgTemp"></span>
+                            </div>
+                        </div>
+                        <div class="side-stats">
+                            <div class="row">
+                                <div class="col text-end">
+                                    <img src="images/Icons/sunrise1.png">
+                                </div>
+                                <div class="col">
+                                    <span id="sunrise">-</span>
+                                </div>
+                                <div class="col text-end">
+                                    <img src="images/Icons/sunset1.png">
+                                </div>
+                                <div class="col">
+                                    <span id="sunset">-</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-end">
+                                    <img src="images/Icons/moonrise.png">
+                                </div>
+                                <div class="col">
+                                    <span id="moonrise">-</span>
+                                </div>
+                                <div class="col text-end">
+                                    <img src="images/Icons/moonset.png">
+                                </div>
+                                <div class="col">
+                                    <span id="moonset">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mt-3">
+                            <div class="col text-center">
+                                <img src="images/Icons/moon.png" width="50px" height="50px">
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                Vollmond
+                            </div>
+                        </div> -->
+                    </aside>
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <ul class="chart-nav nav nav-tabs d-flex d-lg-none">
+                            <li class="nav-item">
+                                <a class="nav-link active c-temperature" aria-current="page" onclick="showTemperature()">
+                                    <image src="images/Icons/tempCold.png"></image> Temperatur
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link c-pressure" onclick="showPressure()">
+                                    <image src="images/Icons/dropProcentage.png"></image> Luftdruck
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link c-humidity" onclick="showHumidity()">
+                                    <image src="images/Icons/barometer.png"></image> Luftfeuchtigkeit
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="statsChart" class="chart" width="100vw" height="50vh"></div>
+                    </div>
+                </div>
+                <div class="row stats-row mt-4 averagestats">
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card card-warning d-flex align-items-center justify-content-center flex-column frostHoursCard">
+                            <img src="images/Icons/snowCrystal.png">
+                            <div class="warning">
+                                Froststunden
+                            </div>
+                            <h3 id="frostHours">-</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                                <div class="progress mt-1"></div>
+                                Luftfeuchtigkeit<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                                <h5 id="uvIndex">1</h5>
+                                UV-Index<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-3 mt-lg-0">
+                        <div class="card" style="position: relative;">
+                            <div class="card-body d-flex align-items-center justify-content-center flex-column">
+                                <img class="sun" src="images/Icons/cloudRain4.png"> Niederschlag
+                                <h5 id="precipitationSum">-</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
     <footer>
-        <div class="container d-flex flex-row align-items-center">
-            <a href="impressum.html">Impressum</a>
-            <div class="ms-auto">© Supergruppe 2022</div>
+        <ul class="nav d-flex  justify-content-center">
+            <li class="nav-item footer-links"><a href="index.html">HOME</a></li>
+            <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
+            <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
+            <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
+            <li class="nav-item footer-links"><a href="stats.html">STATISTIK</a></li>
+        </ul>
+        <div class="d-flex justify-content-center footer-social">
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-facebook"></i>
+        </div>
+        <div class="text-center impressum">
+            <span>David Heftig Marienstraße 20</span><br>
+            <span>89518 Heidenheim</span><br>
+            <span>deftig@suppergruppe.de</span>
+        </div>
+        <div class="d-flex justify-content-center copyright">
+            <span>© 2022 suppergruppe, Inc. All rights reserved.</span>
         </div>
     </footer>
 </body>
