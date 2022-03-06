@@ -1,3 +1,52 @@
+.title img {
+  width: 50px
+}
+
+.title span {
+  color: white;
+  font-size: 2rem;
+}
+
+.search {
+  position: relative;
+}
+
+.search input {
+  background-color: none;
+  padding-right: 36px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+}
+
+.search input {
+  background-color: none;
+  padding-right: 36px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.search input:focus {
+  background-color: none;
+  padding-right: 36px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.search input::placeholder {
+  color: white;
+  opacity: 0.9;
+}
+
+.search .fa-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
 
 div.widget
 {
