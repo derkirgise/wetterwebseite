@@ -1,3 +1,5 @@
+/* Title/ Search */
+
 .title img {
     width: 50px
 }
@@ -13,15 +15,6 @@
 
 .search input {
     background-color: none;
-    padding-right: 36px;
-    border-radius: 20px;
-    background-color: transparent;
-    color: white;
-}
-
-.search input {
-    background-color: none;
-    padding-right: 36px;
     border-radius: 20px;
     border: 2px solid white;
     background-color: transparent;
@@ -41,9 +34,144 @@
     opacity: 0.9;
 }
 
-.search .fa-search {
+.input-icon {
     position: absolute;
     right: 10px;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+.icon-input {
+    padding-right: 36px;
+}
+
+#conditionIcon {
+    height: 4rem;
+}
+
+
+/* Chart */
+
+.chart-config img {
+    width: 30px;
+    height: 30px;
+}
+
+.chart-config .card {
+    background-color: transparent;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.chart-config .card .active {
+    background-color: rgba(0, 102, 204, 0.377);
+}
+
+.chart-config .card:hover {
+    background-color: rgba(139, 156, 255, 0.753);
+}
+
+.config-text {
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.chart-nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+}
+
+.chart-nav img {
+    height: 25px;
+}
+
+.chart-nav li {
+    display: inline-block !important;
+}
+
+.card-warning {
+    /* background-color: rgba(252, 255, 100, 0.356); */
+}
+
+#vartemp {
+    transition: height 5 ease-in;
+    height: 40px;
+}
+
+#vartemp:hover {
+    height: 10px;
+}
+
+.side-stats {
+    padding: 10px;
+}
+
+.side-stats img {
+    width: 40px;
+    height: auto
+}
+
+.side-stats .col {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Bottom */
+
+.progress {
+    height: 50px;
+    background-color: transparent;
+}
+
+.sun {
+    width: 40%;
+}
+
+.big-stats-text {
+    font-size: 5rem;
+}
+
+.small-stats-text {
+    font-size: 2.5rem;
+}
+
+.progress {
+    height: 100%;
+}
+
+.progress>svg,
+.progressTwo>svg {
+    height: 4.5rem;
+}
+
+.circle-progress-value {
+    stroke-width: 6px;
+    stroke: #0d6efd;
+    stroke-linecap: round;
+}
+
+.circle-progress-circle {
+    stroke-width: 2px;
+}
+
+.circle-progress-text {
+    font-size: 1.5rem;
+    fill: black;
+}
+
+.averagestats img {
+    width: 4rem;
+}
+
+.stats-row .card {
+    min-height: 17vh;
+}
+
+#uvIndex {
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
 }
