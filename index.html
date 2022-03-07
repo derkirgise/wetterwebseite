@@ -2,193 +2,263 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wetter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetter</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <link href="global.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="javascript/global.js"></script>
+  <link href="global.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">LOGO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="weather.html">Wetter vor Ort</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="weathermap.html">Wetterkarte</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="webcam.html">Live-Webcam</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="stats.html">Statistik</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container main">
-        <div class="container-fluid foreground">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-11">
-                    <h1>Herzlich Willkommen bei Wetter!</h1>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-11">
-                    <h2>Ihr Wetter in Ulm heute:</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col widget">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="date">
-                                Dienstag, 01. März 2022
-                            </div>
-                            <div class="city">
-                                Ulm
-                            </div>
-                            <div class="temp">
-                               <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="Ein Bild des Wetters" width="60">
-                               18&deg;
-                            </div>
-                        </div>
-                        <div class="col-md-4 align-self-center">
-                            <img src="https://s5.postimg.cc/lifnombwz/mumbai1.png" alt="Ein Bild Ihrer Stadt" width="160">
-                        </div>
-                        <div class="col-md-4 date">
-                            Luftfeuchtigkeit: 1042 hPa<br><br>
-                            Windgeschwindigkeit: 42 kmh<br><br>
-                            Winrichtung: SW<br><br>
-                            Gefühlte Temperatur: 23&deg;<br><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2"></div>
-            </div>
-            <br><br>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th colspan="4">Wetter Deutschland - Vorhersage für heute, Dienstag 01.03.</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <span>Augsburg</span>
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    
-                                    Berlin
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Bonn
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Chemnitz
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Düsseldorf
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Dresden
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Frankfurt am Main
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Hamburg
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Köln
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    München
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Stuttgart
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                                <td>
-                                    Würzburg
-                                    <span class="table_smallpic"><img src="images/index_smallsun.png"></span>
-                                    <span class="table_degree">23&deg;</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-1"></div>
-            </div>
-            </div>
-    </main>
-    <footer>
-        <ul class="nav d-flex  justify-content-center">
-            <li class="nav-item footer-links" ><a href="index.html">HOME</a></li>
-            <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
-            <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
-            <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
-            <li class="nav-item footer-links"><a href="stats.html">STATISTIK</a></li>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">LOGO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">Wetter vor Ort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weathermap.html">Wetterkarte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="webcam.html">Live-Webcam</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stats.html">Statistik</a>
+          </li>
         </ul>
-        <div class="d-flex justify-content-center footer-social">
-            <i class="bi bi-twitter"></i>
-            <i class="bi bi-instagram"></i>
-            <i class="bi bi-facebook"></i>
+      </div>
+    </div>
+  </nav>
+  <main class="container main">
+    <div class="title">
+      <div class="d-flex flex-row align-items-center">
+        <img src="images/home/cloud_white_24dp.svg">
+        <span class="ms-1">Herzlich Willkommen zum Wetter!</span>
+        <div class="ms-auto">
+          <div class="search">
+            <form autocomplete="off">
+              <div class="autocomplete">
+                <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
+                <i class="input-icon fas fa-search"></i>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="text-center impressum">
-            <span>David Heftig Marienstraße 20</span><br>
-            <span>89518 Heidenheim</span><br>
-            <span>deftig@suppergruppe.de</span>
+      </div>
+    </div>
+    <div class="content">
+      <div class="d-flex">
+        <h2 class="m-auto mt-3 mb-3">Ihr Wetter heute in Ulm</h2>
+      </div>
+      <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col m-4 text-center ps-md-5 pe-md-5 widget">
+          <div class="row">
+            <div class="col-md-6 col-lg-4">
+              <div class="date text-md-start">
+                Dienstag, 01. März 2022
+              </div>
+              <div class="city text-md-start">
+                Ulm
+              </div>
+              <div class="temp text-md-start">
+                <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="Ein Bild des Wetters" width="60">
+                18&deg;
+              </div>
+            </div>
+            <div class="col-md-4 m-md-none mt-5 mb-5 d-none d-lg-block">
+              <img src="https://s5.postimg.cc/lifnombwz/mumbai1.png" alt="Ein Bild Ihrer Stadt" width="160">
+            </div>
+            <div class="col-md-6 col-lg-4 date mt-5 mt-md-3 text-md-end">
+              Luftfeuchtigkeit: 1042 hPa<br><br>
+              Windgeschwindigkeit: 42 kmh<br><br>
+              Winrichtung: SW<br><br>
+              Gefühlte Temperatur: 23&deg;<br><br>
+            </div>
+          </div>
         </div>
-        <div class="d-flex justify-content-center copyright">
-            <span>© 2022 suppergruppe, Inc. All rights reserved.</span>
-        </div>
-    </footer>
-</body>
+        <div class="col-lg-1"></div>
+      </div>
+      <br><br>
+      <div class="row d-flex">
+        <div class="col-lg-1"></div>
+        <div class="col ms-5 me-5">
 
+          <div class="d-none d-sm-block">
+            <div class="row">
+              <p class="m-2">Wetter Deutschland - Vorhersage für heute, Dienstag 01.03.</p>
+              <hr class="mb-2">
+            </div>
+            <div class="row">
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                <span>Augsburg</span>
+                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Berlin
+                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Bonn
+                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Chemnitz
+                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Düsseldorf
+                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Dresden
+                <span class="table_smallpic"><img src="images/home/index_smallcloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Freiburg
+                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Hamburg
+                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Köln
+                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                München
+                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Stuttgart
+                <span class="table_smallpic"><img src="images/home/index_smallcloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+              <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
+                Würzburg
+                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
+                <span class="table_degree">23&deg;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+
+      <br>
+
+      <div>
+        <h3 class="text-center">Alles auf einem Blick</h3>
+        <p class="text-center mb-2 mb-lg-4">Hier erhalten Sie eine vollständige und knappe Übersicht über unsere
+          Webseite.</p>
+      </div>
+
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10 row">
+          <div class="col-md-6">
+            <div class="card ms-xl-5 me-xl-5 mt-2 mb-2">
+              <img class="card-img-top m-auto mt-3" src="images/home/icons/location.png" alt="Card image cap"
+                style="width:50px;">
+              <div class="card-body">
+                <h5 class="card-title">Wetter vor Ort</h5>
+                <p class="card-text">Erhalten Sie eine detaillierte Wetterprognose für Ihren gesuchten Ort.</p>
+                <a href="weather.html" class="btn btn-primary">Wetter vor Ort</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card ms-xl-5 me-xl-5 mt-2 mb-2">
+              <img class="card-img-top m-auto mt-3" src="images/home/icons/map.png" alt="Card image cap"
+                style="width:50px;">
+              <div class="card-body">
+                <h5 class="card-title">Wetterkarte</h5>
+                <p class="card-text">Eine komfortable Ansicht der heutigen Wetterverhältnisse in ganz Deutschland.</p>
+                <a href="weathermap.html" class="btn btn-primary">Wetterkarte</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card ms-xl-5 me-xl-5 mt-2 mb-2">
+              <img class="card-img-top m-auto mt-3" src="images/home/icons/webcam.png" alt="Card image cap"
+                style="width:40px;">
+              <div class="card-body">
+                <h5 class="card-title">Live-Webcam</h5>
+                <p class="card-text">Betrachten Sie die Wetterlage vor Ort mit den eigenen Augen durch unsere Webcams.
+                </p>
+                <a href="webcam.html" class="btn btn-primary">Live-Webcam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card ms-xl-5 me-xl-5 mt-2 mb-2">
+              <img class="card-img-top m-auto mt-3" src="images/home/icons/statistic.png" alt="Card image cap"
+                style="width:40px;">
+              <div class="card-body">
+                <h5 class="card-title">Statistik</h5>
+                <p class="card-text">Hier erhalten Sie eine detaillierte Ansicht des Wetters der vergangenen Tage.</p>
+                <a href="stats.html" class="btn btn-primary">Statistik</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+
+
+    </div>
+  </main>
+  <footer>
+    <ul class="nav d-flex  justify-content-center">
+      <li class="nav-item footer-links"><a href="index.html">HOME</a></li>
+      <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
+      <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
+      <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
+      <li class="nav-item footer-links"><a href="stats.html">STATISTIK</a></li>
+    </ul>
+    <div class="d-flex justify-content-center footer-social">
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-facebook"></i>
+    </div>
+    <div class="text-center impressum">
+      <span>David Heftig Marienstraße 20</span><br>
+      <span>89518 Heidenheim</span><br>
+      <span>deftig@suppergruppe.de</span>
+    </div>
+    <div class="d-flex justify-content-center copyright">
+      <span>© 2022 suppergruppe, Inc. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+<script src="javascript/search.js"></script>
 </html>

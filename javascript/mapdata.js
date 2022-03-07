@@ -73,67 +73,67 @@ var simplemaps_countrymap_mapdata={
   state_specific: {
     DEU1572: {
       name: "Nordrhein-Westfalen",
-      url: "weathermap.html?state=nordrhein-westfalen"
+      url: "weathermap.html?state=NW"
     },
     DEU1573: {
       name: "Baden-Württemberg",
-      url: "weathermap.html?state=baden-wuerttemberg"
+      url: "weathermap.html?state=BW"
     },
     DEU1574: {
       name: "Hessen",
-      url: "weathermap.html?state=hessen"
+      url: "weathermap.html?state=HE"
     },
     DEU1575: {
       name: "Bremen",
-      url: "weathermap.html?state=bremen"
+      url: "weathermap.html?state=HB"
     },
     DEU1576: {
       name: "Niedersachsen",
-      url: "weathermap.html?state=niedersachsen"
+      url: "weathermap.html?state=NI"
     },
     DEU1577: {
       name: "Thüringen",
-      url: "weathermap.html?state=thüringen"
+      url: "weathermap.html?state=TH"
     },
     DEU1578: {
       name: "Hamburg",
-      url: "weathermap.html?state=hamburg"
+      url: "weathermap.html?state=HH"
     },
     DEU1579: {
       name: "Schleswig-Holstein",
-      url: "weathermap.html?state=schleswig-holstein"
+      url: "weathermap.html?state=SH"
     },
     DEU1580: {
       name: "Rheinland-Pfalz",
-      url: "weathermap.html?state=rheinland-pfalz"
+      url: "weathermap.html?state=RP"
     },
     DEU1581: {
       name: "Saarland",
-      url: "weathermap.html?state=saarland"
+      url: "weathermap.html?state=SL"
     },
     DEU1591: {
       name: "Bayern",
-      url: "weathermap.html?state=bayern"
+      url: "weathermap.html?state=BY"
     },
     DEU1599: {
       name: "Berlin",
-      url: "weathermap.html?state=berlin"
+      url: "weathermap.html?state=BE"
     },
     DEU1600: {
       name: "Sachsen-Anhalt",
-      url: "weathermap.html?state=sachsen-anhalt"
+      url: "weathermap.html?state=ST"
     },
     DEU1601: {
       name: "Sachsen",
-      url: "weathermap.html?state=sachsen"
+      url: "weathermap.html?state=SN"
     },
     DEU3487: {
       name: "Brandenburg",
-      url: "weathermap.html?state=brandenburg"
+      url: "weathermap.html?state=BB"
     },
     DEU3488: {
       name: "Mecklenburg-Vorpommern",
-      url: "weathermap.html?state=mecklenburg-vorpommern"
+      url: "weathermap.html?state=MV"
     }
   },
   locations: {
