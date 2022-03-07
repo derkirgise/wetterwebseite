@@ -6,9 +6,7 @@ let dateSelection;
 let humidityProgressCircle;
 
 async function getData() {
-    // TODO: Dummy-Daten entfernen
-    saveCoords(48.8757833219494, 10.720759934641583);
-
+    console.log('HEY');
     let coords = getCoords();
     getHistoryData(coords.lat, coords.lon, dateSelection)
         .then((data) => {
@@ -131,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     chart = new ApexCharts(document.querySelector("#statsChart"), options);
 
     chart.render();
-
+    autocomplete(document.getElementById("myInput"), cities, function(){getData()});
 });
 
 function showTemperature() {

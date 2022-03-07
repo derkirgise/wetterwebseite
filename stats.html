@@ -78,9 +78,13 @@
                 <span class="ms-1">Statistiken</span>
                 <div class="ms-auto">
                     <div class="search">
-                        <input class="form-control icon-input" placeholder="Suchen...">
-                        <i class="input-icon fas fa-search"></i>
-                    </div>
+                        <form autocomplete="off">
+                          <div class="autocomplete">
+                            <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
+                            <i class="input-icon fas fa-search"></i>
+                          </div>
+                        </form>
+                      </div>
                 </div>
             </div>
         </div>
@@ -294,5 +298,5 @@
         </div>
     </footer>
 </body>
-
+<script src="javascript/search.js"></script>
 </html>
