@@ -1,10 +1,11 @@
 let cities = [];
 
-function city(name,lat,lon)
+function city(name,lat,lon,state)
 {
     this.name = name;
     this.lat = lat;
     this.lon = lon;
+    this.state = state;
 }
 
 async function getData() {
@@ -13,14 +14,10 @@ async function getData() {
 
     for (let id in data)
     {
-        cities.push(new city (data[id].name, data[id].coords.lat, data[id].coords.lon));
+        cities.push(new city (data[id].name, data[id].coords.lat, data[id].coords.lon, data[id].state));
     }
 }
 
-function saveCoords(lat, long) {
-    localStorage.setItem('lat', lat);
-    localStorage.setItem('long', long);
-}
 
 console.log(cities);
 
@@ -56,14 +53,17 @@ function autocomplete(inp, arr) {
             b.innerHTML = "<strong>" + arr[i].name.substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].name.substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i].name + "|" + arr[i].lat + "|" + arr[i].lon + "'>";
+            b.innerHTML += "<input type='hidden' data-searchinformation=''";
+            b.dataset.searchinformation=JSON.stringify(arr[i]);
             /*execute a function when someone clicks on the item value (DIV element):*/
                 b.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/
-                let slicedvalue = this.getElementsByTagName("input")[0].value.split("|");
-                inp.value = slicedvalue[0];
-                saveCoords(slicedvalue[1],slicedvalue[2]);
+                let searchinfo = JSON.parse(e.target.dataset.searchinformation);
+                saveCoords(searchinfo.lat,searchinfo.lon,searchinfo.name,searchinfo.state);
+                inp.value=searchinfo.name;
+
                 
+
                 /*close the list of autocompleted values,
                 (or any other open lists of autocompleted values:*/
                 closeAllLists();
@@ -72,7 +72,7 @@ function autocomplete(inp, arr) {
           }
         }
         for (i = 0; i < 3; i++) {
-        document.getElementById(i).setAttribute("style", "display: block; width: 100%;");
+        document.getElementById(i).setAttribute("style", "display: block");
         }
     });
     /*execute a function presses a key on the keyboard:*/

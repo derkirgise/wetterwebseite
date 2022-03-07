@@ -1,6 +1,8 @@
-function saveCoords(lat, long) {
+function saveCoords(lat, long,cityname,state) {
     localStorage.setItem('lat', lat);
     localStorage.setItem('long', long);
+    localStorage.setItem('cityname', cityname);
+    localStorage.setItem('state', state);
 }
 
 function getCoords() {
