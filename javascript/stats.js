@@ -5,7 +5,7 @@ let chartData = [];
 let dateSelection;
 let humidityProgressCircle;
 
-async function getData() {
+async function getApiData() {
     let coords = getCoords();
     getHistoryData(coords.lat, coords.lon, dateSelection)
         .then((data) => {
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     chart = new ApexCharts(document.querySelector("#statsChart"), options);
 
     chart.render();
-    autocomplete(document.getElementById("myInput"), cities, function(){getData()});
+    autocomplete(document.getElementById("myInput"), cities, function(){getApiData()});
 });
 
 function showTemperature() {
@@ -236,7 +236,7 @@ function onChangeTimeSelection(event) {
     dateSelection.setDate(dateSelection.getDate() - Math.abs(offset));
 
     dateSelection = `${dateSelection.getFullYear()}-${dateSelection.getMonth() + 1}-${dateSelection.getDate()}`;
-    getData(dateSelection);
+    getApiData(dateSelection);
     return dateSelection;
 }
 
