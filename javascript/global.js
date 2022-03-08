@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 // Setzt den Default LocalStorage auf Heidenheim bei erstem Seitenaufruf
 function checkLocalStorage(){
-    if (document.localStorage.cityname=''){
+    if (!localStorage.cityname){
         let lat, long, cityname, state;
         lat = "48.67611";
         long = "10.15444";
