@@ -26,7 +26,7 @@ body {
 }
 
 .padding {
-    padding: 5rem
+    padding: 0rem 5rem 0rem 5rem
 }
 
 .grid-margin,
@@ -112,7 +112,7 @@ p {
 }
 
 .card-weather .weather-data {
-    padding: 0 0 4.75rem
+    padding: 0 0 1.75rem
 }
 
 .mr-auto,
