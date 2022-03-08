@@ -1,0 +1,1 @@
+autocomplete(document.getElementById("myInput"), cities, function(){getData()});

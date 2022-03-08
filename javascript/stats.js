@@ -21,7 +21,7 @@ async function getApiData() {
 async function setData() {
     // Chart Data
     let locationLabel = document.getElementById("locationName");
-    locationLabel.innerHTML = locationInfo.name + ",";
+    locationLabel.innerHTML = localStorage.cityname + ",";
 
     let hour = historyData.hour;
     let tempData = hour.map(x => [x.time, x.temp_c]);
