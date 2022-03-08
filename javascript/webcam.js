@@ -1,5 +1,6 @@
-var bllist = ["bw","by","be","bb","hb","hh","he","mv","ni","nw","rp","sl","sn","st","sh","th"];
+var bllist = ["BW","BY","BE","BB","HB","HH","HE","MV","NI","NW","RP","SL","SN","ST","SH","TH"];
 var blName = ["Baden-Württemberg","Bayern","Berlin","Brandenburg","Bremen","Hamburg","Hessen","Mecklenburg-Vorpommern","Niedersachsen","Nordrhein-Westfalen","Rheinland-Pfalz","Saarland","Sachsen","Sachsen-Anhalt","Schleswig-Holstein","Thüringen"];
+var blApilist = ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Mecklenburg-Western Pomerania","Lower Saxony","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"]
 
 var videolink = ["https://www.youtube.com/embed/55sS4BroQGw?autoplay=1&mute=1",
 "https://www.youtube.com/embed/fzY1Pcj8XhM?autoplay=1&mute=1",
@@ -49,12 +50,6 @@ const queryString = window.location.search;
 
 selectbl(bllist.indexOf(blParameter));
 
-/*
-switch (blParameter) {
-    case "bw":
-      bw();
-      break;
-    default:
-      console.log("No Parameter given");
-  }
-*/
+if (localStorage.state != null){
+  selectbl(blApilist.indexOf(blParameter));
+}
