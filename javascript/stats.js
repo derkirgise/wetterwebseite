@@ -12,6 +12,7 @@ async function getApiData() {
             locationInfo = data.location;
             historyData = data.forecast.forecastday[0];
             setData();
+            showTemperature();
         })
         .catch((error) => {
             console.error("Error occured: ", error);
