@@ -152,3 +152,11 @@ p {
   .averagestats img {
     width: 4rem;
 }
+.title img {
+    width: 50px
+}
+
+.title span {
+    color: white;
+    font-size: 2rem;
+}
