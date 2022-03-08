@@ -33,3 +33,18 @@ async function getIconPath(conditionId) {
 document.addEventListener("DOMContentLoaded", function(event) {
     document.body.classList.remove("no-js");
 });
+
+
+// Setzt den Default LocalStorage auf Heidenheim bei erstem Seitenaufruf
+function checkLocalStorage(){
+    if (!localStorage.cityname){
+        let lat, long, cityname, state;
+        lat = "48.67611";
+        long = "10.15444";
+        cityname = "Heidenheim an der Brenz";
+        state = "Baden-Württemberg";
+        saveCoords(lat, long,cityname,state);
+    }
+}
+
+checkLocalStorage();
