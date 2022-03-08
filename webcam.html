@@ -12,6 +12,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <link href="global.css" rel="stylesheet">
+  <script src="javascript/webcam.js"></script>
 </head>
 
 <body>
@@ -54,26 +55,26 @@
 
 
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Bitte wähle dein Bundesland:
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <p id="currentBl">Bitte wähle dein Bundesland:</p>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><button type="button" onclick="bw()" class="btn btn-success btn-sm">Baden-Württemberg</button></li>
-          <li><button type="button" onclick="by()" class="btn btn-success btn-sm">Bayern</button></li>
-          <li><button type="button" onclick="be()" class="btn btn-success btn-sm">Berlin</button></li>
-          <li><button type="button" onclick="bb()" class="btn btn-success btn-sm">Brandenburg</button></li>
-          <li><button type="button" onclick="hb()" class="btn btn-success btn-sm">Bremen</button></li>
-          <li><button type="button" onclick="hh()" class="btn btn-success btn-sm">Hamburg</button></li>
-          <li><button type="button" onclick="he()" class="btn btn-success btn-sm">Hessen</button></li>
-          <li><button type="button" onclick="mv()" class="btn btn-success btn-sm">Mecklenburg-Vorpommern</button></li>
-          <li><button type="button" onclick="ni()" class="btn btn-success btn-sm">Niedersachsen</button></li>
-          <li><button type="button" onclick="nw()" class="btn btn-success btn-sm">Nordrhein-Westfalen</button></li>
-          <li><button type="button" onclick="rp()" class="btn btn-success btn-sm">Rheinland-Pfalz</button></li>
-          <li><button type="button" onclick="sl()" class="btn btn-success btn-sm">Saarland</button></li>
-          <li><button type="button" onclick="sn()" class="btn btn-success btn-sm">Sachsen</button></li>
-          <li><button type="button" onclick="st()" class="btn btn-success btn-sm">Sachsen-Anhalt</button></li>
-          <li><button type="button" onclick="sh()" class="btn btn-success btn-sm">Schleswig-Holstein</button></li>
-          <li><button type="button" onclick="th()" class="btn btn-success btn-sm">Thüringen</button></li>
+          <li><button type="button" onclick="selectbl(0)" class="btn btn-info btn-sm">Baden-Württemberg</button></li> 
+          <li><button type="button" onclick="selectbl(1)" class="btn btn-info btn-sm">Bayern</button></li>
+          <li><button type="button" onclick="selectbl(2)" class="btn btn-info btn-sm">Berlin</button></li>
+          <li><button type="button" onclick="selectbl(3)" class="btn btn-info btn-sm">Brandenburg</button></li>
+          <li><button type="button" onclick="selectbl(4)" class="btn btn-info btn-sm">Bremen</button></li>
+          <li><button type="button" onclick="selectbl(5)" class="btn btn-info btn-sm">Hamburg</button></li>
+          <li><button type="button" onclick="selectbl(6)" class="btn btn-info btn-sm">Hessen</button></li>
+          <li><button type="button" onclick="selectbl(7)" class="btn btn-info btn-sm">Mecklenburg-Vorpommern</button></li>
+          <li><button type="button" onclick="selectbl(8)" class="btn btn-info btn-sm">Niedersachsen</button></li>
+          <li><button type="button" onclick="selectbl(9)" class="btn btn-info btn-sm">Nordrhein-Westfalen</button></li>
+          <li><button type="button" onclick="selectbl(10)" class="btn btn-info btn-sm">Rheinland-Pfalz</button></li>
+          <li><button type="button" onclick="selectbl(11)" class="btn btn-info btn-sm">Saarland</button></li>
+          <li><button type="button" onclick="selectbl(12)" class="btn btn-info btn-sm">Sachsen</button></li>
+          <li><button type="button" onclick="selectbl(13)" class="btn btn-info btn-sm">Sachsen-Anhalt</button></li>
+          <li><button type="button" onclick="selectbl(14)" class="btn btn-info btn-sm">Schleswig-Holstein</button></li>
+          <li><button type="button" onclick="selectbl(15)" class="btn btn-info btn-sm">Thüringen</button></li>
         </ul>
       </div>
 
@@ -94,8 +95,8 @@
             aria-labelledby="panelsStayOpen-headingOne">
             <div class="accordion-body d-flex justify-content-center">
       
-                <div id="mainVid" class="ratio ratio-16x9">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/vBG2O907OM8?autoplay=1&mute=1"
+                <div class="ratio ratio-16x9">
+                  <iframe id="mainVid" width="560" height="315" src="https://www.youtube.com/embed/vBG2O907OM8?autoplay=1&mute=1"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -116,8 +117,8 @@
             aria-labelledby="panelsStayOpen-headingTwo">
             <div class="accordion-body d-flex justify-content-center">
               
-                <div id="mainMap" class="ratio ratio-21x9">
-                  <iframe
+                <div class="ratio ratio-21x9">
+                  <iframe id="mainMap"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1900.5070450754424!2d9.468803995593511!3d47.65095256288142!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479b00ff89def753%3A0x86842a080d23708b!2sGraf-Zeppelin-Haus!5e0!3m2!1sen!2spt!4v1646134340236!5m2!1sen!2spt"
                     width="300" height="200" style="border:0;" loading="lazy"></iframe>
                 </div>
@@ -144,12 +145,12 @@
               </div>
             </div>
             <div class="col">
-              Flughafen Stuttgart, Baden-Württemberg
+              Berg am Laim München, Bayern
               <div id="more2" class="ratio ratio-16x9">
-                <img id="live" class="ourCam jch-lazyloaded"
-                  src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0&amp;1646134870405"
-                  data-src="https://www.stuttgart-airport.com/remote.jpg.ashx?mode=donothing&amp;mcache=true&amp;urlb64=aHR0cDovL3dlYmNhbS5mbHVnaGFmZW4tc3R1dHRnYXJ0LmRlL0ZsdWdoYWZlbl9TdHV0dGdhcnRfV2ViY2FtNS5qcGc_MjAyMDAzMDIxMjM3Mzc&amp;hmac=UrC7NLSgtW0"
-                  alt="Livestream des Wetters am Flughafen Stuttgart" width="100%" height="100%">
+                <iframe width="923" height="544" src="https://www.youtube.com/embed/KxWuwC7R5kY?autoplay=1&mute=1"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
               </div>
             </div>
             <div class="col">
