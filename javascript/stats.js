@@ -63,7 +63,10 @@ async function setData() {
     document.getElementById("historyDate").innerHTML = new Date(historyData.date).toLocaleDateString("de-DE");
 
     let weatherConditionIcon = document.getElementById("conditionIcon");
-    weatherConditionIcon.src = await getIconPath(weatherCondition.code);
+
+    let iconInfo = await getIconInformation(weatherCondition.code);
+    weatherConditionIcon.src = iconInfo.iconPath;
+    weatherConditionIcon.alt = iconInfo.alt;
 
     // SideStats
     document.getElementById("minTemp").innerText = `MIN: ${historyData.day.mintemp_c}°C`;
@@ -74,6 +77,19 @@ async function setData() {
 
     document.getElementById("sunrise").innerText = convertTimeToTwentyFourHFormat(historyData.astro.sunrise);
     document.getElementById("sunset").innerText = convertTimeToTwentyFourHFormat(historyData.astro.sunset);
+
+    if (historyData.astro.moonrise.includes("No")) {
+        document.querySelectorAll(".moonrise").forEach(el => el.style.display = 'none');
+    } else {
+        document.querySelectorAll(".moonset").forEach(el => el.style.display = 'block');
+    }
+
+    if (historyData.astro.moonset.includes("No")) {
+        document.querySelectorAll(".moonset").forEach(el => el.style.display = 'none');
+    } else {
+        document.querySelectorAll(".moonset").forEach(el => el.style.display = 'block');
+    }
+
     document.getElementById("moonrise").innerText = convertTimeToTwentyFourHFormat(historyData.astro.moonrise);
     document.getElementById("moonset").innerText = convertTimeToTwentyFourHFormat(historyData.astro.moonset);
 
@@ -204,26 +220,29 @@ function setTemperature(temp) {
 
     tempRectangle.animate(
         [{
-            height: '0px',
-            y: rectAngleY + height,
+            height: '0',
+            y: rectAngleY + height + 'px'
         }, {
             height: rectHeight + 'px',
-            y: yCoords,
+            y: yCoords + 'px'
         }], {
             duration: animationDuration,
-            iterations: 1,
             fill: 'forwards'
         });
 
     clipPath.animate([{
-        y: rectAngleY + height
+        y: rectAngleY + height + 'px'
     }, {
-        y: yCoords
+        y: yCoords + 'px'
     }], {
         duration: animationDuration,
         iterations: 1,
         fill: 'forwards'
     })
+
+    // tempRectangle.setAttribute("height", rectHeight + 'px');
+    // tempRectangle.setAttribute("y", yCoords);
+    // clipPath.setAttribute("y", yCoords);
 }
 
 function onChangeTimeSelection(event) {

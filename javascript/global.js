@@ -15,7 +15,7 @@ function getCoords() {
     }
 }
 
-async function getIconPath(conditionId) {
+async function getIconInformation(conditionId) {
     let response = await fetch("data/weather_conditions.json", {
         mode: 'cors',
         headers: {
@@ -26,7 +26,7 @@ async function getIconPath(conditionId) {
     let condition = data.find(x => x.code == conditionId);
 
     if (condition && condition.iconPath) {
-        return condition.iconPath;
+        return condition;
     }
 }
 
