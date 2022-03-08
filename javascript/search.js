@@ -48,7 +48,7 @@ function autocomplete(inp, arr, callback) {
             /*create a DIV element for each matching element:*/
             elementList = document.createElement("DIV");
             /*make the matching letters bold:*/
-            elementList.innerHTML = "<strong>" + arr[i].name.substr(0, val.length) + "</strong>";
+            elementList.innerHTML = "<strong style='pointer-events:none'>" + arr[i].name.substr(0, val.length) + "</strong>";
             elementList.innerHTML += arr[i].name.substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
             elementList.setAttribute('data-searchinformation',JSON.stringify(arr[i]));
@@ -58,7 +58,7 @@ function autocomplete(inp, arr, callback) {
             /*execute a function when someone clicks on the item value (DIV element):*/
                 elementList.addEventListener("click", function(e) {
                 /*insert the value for the autocomplete text field:*/
-                console.log(e.target.dataset.searchinformation);
+                //console.log(e.target.dataset.searchinformation);
                 searchinfo = JSON.parse(e.target.dataset.searchinformation);
                 inp.value=searchinfo.name;
                 saveCoords(searchinfo.lat,searchinfo.lon,searchinfo.name,searchinfo.state);

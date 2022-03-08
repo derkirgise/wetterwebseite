@@ -6,7 +6,6 @@ let dateSelection;
 let humidityProgressCircle;
 
 async function getData() {
-    console.log('HEY');
     let coords = getCoords();
     getHistoryData(coords.lat, coords.lon, dateSelection)
         .then((data) => {
