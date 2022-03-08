@@ -129,6 +129,7 @@ body {
 
 .search {
     position: relative;
+    width: 15vw;
   }
   
   .search input {
@@ -169,7 +170,6 @@ body {
     border-bottom: none;
     border-top: none;
     top: 100%;
-    width: 100%;
     left: 0;
     right: 0;
   }
@@ -179,7 +179,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     color: black;
-    background-color: rgba(0, 141, 235, 0.541);;
+    background-color: rgba(255, 255, 255, 0.541);;
     border-bottom: 1px solid #d4d4d4;
     width: 100%;
   }

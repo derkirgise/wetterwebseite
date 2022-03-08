@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="weather.html">Wetter vor Ort</a>
@@ -78,9 +78,13 @@
                 <span class="ms-1">Statistiken</span>
                 <div class="ms-auto">
                     <div class="search">
-                        <input class="form-control icon-input" placeholder="Suchen...">
-                        <i class="input-icon fas fa-search"></i>
-                    </div>
+                        <form autocomplete="off">
+                          <div class="autocomplete">
+                            <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
+                            <i class="input-icon fas fa-search"></i>
+                          </div>
+                        </form>
+                      </div>
                 </div>
             </div>
         </div>
@@ -241,7 +245,7 @@
                             <div class="warning">
                                 Froststunden
                             </div>
-                            <h3 id="frostHours">-</span>
+                            <h5 id="frostHours">-</span>
                         </div>
                     </div>
                     <div class="col-lg-3 mt-3 mt-lg-0">
@@ -294,5 +298,5 @@
         </div>
     </footer>
 </body>
-
+<script src="javascript/search.js"></script>
 </html>
