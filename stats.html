@@ -30,7 +30,7 @@
             <a class="navbar-brand" href="index.html">
                 <svg width="100px" viewBox="0 0 300 160" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" alt="Logo von Wetter by Supergruppe (Link zur Startseite)">
+                    style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
                     <g>
                         <path
                             d="M234.531,59.192C225.584,48.904 212.4,42.4 197.699,42.4C197.068,42.4 196.453,42.472 195.829,42.494C185.844,20.29 163.576,4.805 137.651,4.805C105.619,4.805 79.18,28.425 74.604,59.192C70.79,58.028 66.751,57.393 62.565,57.393C39.757,57.393 21.265,75.885 21.265,98.687C21.265,115.078 30.818,129.242 44.66,135.914"
@@ -100,7 +100,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-3 col-lg-1 d-flex align-items-center justify-content-center">
-                    <img id="conditionIcon">
+                    <img id="conditionIcon" src="images/Icons/sun1.png" alt="Symbol zur Veranschaulichung des Wetters">
                 </div>
                 <div class="col-9 col-lg-11">
                     <h3 id="locationName">Berlin,</h3>
@@ -136,20 +136,20 @@
                             <div class="card">
                                 <div class="card-body align-items-center d-flex active c-temperature"
                                     onclick="showTemperature()">
-                                    <image src="images/Icons/tempCold.png">
+                                    <img src="images/Icons/tempCold.png" alt="Symbol eines Thermometers (Mit Klick den Temparatuerverlauf öffnen)">
                                     <span class="config-text">Temperatur</span>
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card-body align-items-center d-flex c-pressure" onclick="showPressure()">
-                                    <image src="images/Icons/dropProcentage.png">
-                                    <span class="config-text">Luftdruck</span>
+                                <div class="card-body align-items-center d-flex c-humidity" onclick="showHumidity()">
+                                    <img src="images/Icons/dropProcentage.png" alt="Symbol eines Wassertropfens (Mit Klick den Verlauf der Luftfeuchtigkeit öffnen)">
+                                    <span class="config-text">Luftfeuchtigkeit</span>
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card-body align-items-center d-flex c-humidity" onclick="showHumidity()">
-                                    <image src="images/Icons/barometer.png">
-                                    <span class="config-text">Luftfeuchtigkeit</span>
+                                <div class="card-body align-items-center d-flex c-pressure" onclick="showPressure()">
+                                    <img src="images/Icons/barometer.png" alt="Symbol eines Barometers (Mit Klick den Verlauf des Luftdrucks öffnen)">
+                                    <span class="config-text">Luftdruck</span>
                                 </div>
                             </div>
                         </div>
@@ -230,17 +230,17 @@
                             <li class="nav-item">
                                 <a class="nav-link active c-temperature" aria-current="page"
                                     onclick="showTemperature()">
-                                    <image src="images/Icons/tempCold.png"> Temperatur
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link c-pressure" onclick="showPressure()">
-                                    <image src="images/Icons/dropProcentage.png"> Luftdruck
+                                    <img src="images/Icons/tempCold.png" alt="Symbol eines Thermometers (Mit Klick den Temparatuerverlauf öffnen)"> Temperatur
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link c-humidity" onclick="showHumidity()">
-                                    <image src="images/Icons/barometer.png">Luftfeuchtigkeit
+                                    <img src="images/Icons/dropProcentage.png" alt="Symbol eines Wassertropfens (Mit Klick den Verlauf der Luftfeuchtigkeit öffnen)"> Luftfeuchtigkeit
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link c-pressure" onclick="showPressure()">
+                                    <img src="images/Icons/barometer.png" alt="Symbol eines Barometers (Mit Klick den Verlauf des Luftdrucks öffnen)"> Luftdruck
                                 </a>
                             </li>
                         </ul>
