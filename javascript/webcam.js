@@ -46,23 +46,22 @@ function selectbl(index){
 console.log(videolink[index]);
 document.getElementById("mainVid").src = videolink[index];
 document.getElementById("mainMap").src = maplink[index];
-document.getElementById("currentBl").innerHTML = blName[index];
+document.getElementById("selectedState").innerHTML = blName[index];
 }
 
 if (localStorage.state != null){
-  console.log("HALLLLLLOOOOOO");
-  console.log(blApilist.indexOf(localStorage.state));
   selectbl(blApilist.indexOf(localStorage.state));
+  
 }
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const urlState = urlParams.get('state')
-
 console.log(urlState);
 
 
 if(urlState != null){
+  console.log("Passt");
   selectbl(bllist.indexOf(urlState));
 }
 

@@ -84,8 +84,9 @@
       </div>
 
       <div class="content">
-        <select onchange="selectbl(value)" class="form-select" aria-label="Default select example">
-          <option selected>Bitte wähle dein Bundesland:</option>
+        <span style="color: black; font-size: 1.1rem;">Ausgewähltes Bundesland:</span>
+        <select style="margin-top: 10px;" onchange="selectbl(value)" class="form-select" aria-label="Default select example">
+          <option id="selectedState" selected disabled>Bundesland wählen</option>
           <option value="0">Baden-Württemberg</option>
           <option value="1">Bayern</option>
           <option value="2">Berlin</option>
@@ -188,11 +189,10 @@
           </div>
         </div>
       </div>
-      <script src="javascript/webcam.js"></script>
   </main>
 </body>
 
-</html>
+<script src="javascript/webcam.js"></script>
 <footer>
   <ul class="nav d-flex  justify-content-center">
     <li class="nav-item footer-links"><a href="index.html">HOME</a></li>
