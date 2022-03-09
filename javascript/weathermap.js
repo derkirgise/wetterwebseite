@@ -1,12 +1,12 @@
 const localSotrageStates = ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Mecklenburg-Western Pomerania","Lower Saxony","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"]
 
-
-async function getStateList() {
-    return getStateData();
+async function getStateData() {
+    return await fetch("data/coordinatesGermanStates.json")
+    .then((response) => response.json());
 }
 
 async function setData(shortStatePar){
-    const states = await getStateList();
+    const states = await getStateData();
     let index = states.findIndex(x => x.shortState === shortStatePar);
     if(index === -1){
         if (localStorage.state != null){
@@ -26,8 +26,8 @@ async function setData(shortStatePar){
     
 
 
-
-    const stateWeatherInfo = await getWeatherState(states[index].lat, states[index].long);
+    const dateToday =  new Date().toISOString().slice(0, 10);
+    const stateWeatherInfo = await getHistoryData(states[index].lat, states[index].long, dateToday);
     
     document.getElementById('moon-phase').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase;
     document.getElementById('sunrise').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunrise)+' Uhr';
