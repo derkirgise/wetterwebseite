@@ -44,16 +44,18 @@ async function setData(shortStatePar){
     document.getElementById('minTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].mintemp_c + ' °C';
     document.getElementById('maxTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].maxtemp_c + ' °C';
     document.getElementById('weatherText').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day']['condition'].text;
-    document.getElementById('weather-icon').setAttribute('src', stateWeatherInfo['forecast']['forecastday'][0]['day']['condition'].icon) 
     document.getElementById('rainAmount').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].totalprecip_in + ' Liter/m<sup>2</sup>';
     const hour = new Date().getHours();
+    const image = await getIconInformation(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour]['condition'].code);
+    console.log(image.iconPath);
+    document.getElementById('weather-icon').setAttribute('src', image.iconPath); 
+    document.getElementById('weather-icon').setAttribute('alt', image.alt);
     document.getElementById('windspeed').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_kph + ' km/h';
     document.getElementById('actualTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].temp_c + ' °C';
     document.getElementById('feelTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].feelslike_c + ' °C';
     document.getElementById('rainPercentage').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].will_it_rain + ' %';
-    document.getElementById('windDirection').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_dir;
-    console.log(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour]);
-    console.log()
+    document.getElementById('windDirection').innerHTML = translateWinddirection(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_dir);
+    
 }
 
 
@@ -81,4 +83,25 @@ function convertTimeToTwentyFourHFormat(timeTwelveH) {
         hours = parseInt(hours, 10) + 12;
     }
     return `${hours}:${minutes}`;
+}
+
+function translateWinddirection(winddirection) {
+    switch (winddirection) {
+        case "N": return "Nord";
+        case "NE": return "Nordost";
+        case "E": return "Ost";
+        case "SE": return "Südost";
+        case "S": return "Süd";
+        case "SW": return "Südwest";
+        case "W": return "West";
+        case "NW": return "Nordwest";
+        case "NNE": return "Nordnordost";
+        case "ENE": return "Ostnordost";
+        case "ESE": return "Ostsüdost";
+        case "SSE": return "Südsüdost";
+        case "SSW": return "Südsüdwest";
+        case "WSW": return "Westsüdwest";
+        case "WNW": return "Westnordwest";
+        case "NNW": return "Nordnordwest";
+    }
 }
