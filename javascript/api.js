@@ -24,9 +24,3 @@ async function getForecastData(lat, lon) {
         }
     }).then((response) => response.json());
 }
-
-
-async function getStateData() {
-    return await fetch("data/coordinatesGermanStates.json")
-    .then((response) => response.json());
-}

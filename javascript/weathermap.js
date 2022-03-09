@@ -5,6 +5,11 @@ async function getStateData() {
     .then((response) => response.json());
 }
 
+async function getMoonTranslationJSON() {
+    return await fetch("data/moon-phase-translation.json")
+    .then((response) => response.json());
+}
+
 async function setData(shortStatePar){
     const states = await getStateData();
     let index = states.findIndex(x => x.shortState === shortStatePar);
@@ -29,7 +34,9 @@ async function setData(shortStatePar){
     const dateToday =  new Date().toISOString().slice(0, 10);
     const stateWeatherInfo = await getHistoryData(states[index].lat, states[index].long, dateToday);
     
-    document.getElementById('moon-phase').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase;
+    document.getElementById('moon-phase').innerHTML = await translateMoonPhase(stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase);
+
+
     document.getElementById('sunrise').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunrise)+' Uhr';
     document.getElementById('sunset').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunset)+' Uhr';
     document.getElementById('minTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].mintemp_c + ' °C';
@@ -39,7 +46,6 @@ async function setData(shortStatePar){
     document.getElementById('rainAmount').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].totalprecip_in + ' Liter/m<sup>2</sup>';
     const hour = new Date().getHours();
     const image = await getIconInformation(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour]['condition'].code);
-    console.log(image.iconPath);
     document.getElementById('weather-icon').setAttribute('src', image.iconPath); 
     document.getElementById('weather-icon').setAttribute('alt', image.alt);
     document.getElementById('windspeed').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_kph + ' km/h';
@@ -93,6 +99,12 @@ function translateWinddirection(winddirection) {
         case "WNW": return "Westnordwest";
         case "NNW": return "Nordnordwest";
     }
+}
+
+async function translateMoonPhase(moonPhaseEn){
+    const json = await getMoonTranslationJSON();
+    const index = json.findIndex(x => x.en === moonPhaseEn.toLowerCase());
+    return json[index].de;
 }
 
 const queryString = window.location.search;
