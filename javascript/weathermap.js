@@ -1,14 +1,4 @@
-let stateName;
-let actualTemp;
-let minTemp;
-let maxTemp;
-let sunrise;
-let sunset;
-let percentageRain;
-let literRainSquareMeters;
-let windDirection;
-let windSpeed;
-let moonphase;
+const localSotrageStates = ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Mecklenburg-Western Pomerania","Lower Saxony","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"]
 
 
 async function getStateList() {
@@ -16,13 +6,15 @@ async function getStateList() {
 }
 
 async function setData(shortStatePar){
-    
-    console.log(shortStatePar);
     const states = await getStateList();
-    console.log(states);
     let index = states.findIndex(x => x.shortState === shortStatePar);
     if(index === -1){
-        index = 0;
+        if (localStorage.state != null){
+            index = localSotrageStates.indexOf(localStorage.state);
+          }
+          else{
+              index = 0;
+          }
     }
 
     document.getElementById("stateName").innerHTML = states[index].state;
@@ -58,7 +50,6 @@ async function setData(shortStatePar){
     
 }
 
-
 async function setDate(){
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -68,8 +59,6 @@ async function setDate(){
     if (mm < 10) mm = '0' + mm;
     document.getElementById('date').innerHTML = dd + '.' + mm + '.' + yyyy;
 }
-
-
 
 function convertTimeToTwentyFourHFormat(timeTwelveH) {
     let [time, addition] = timeTwelveH.split(' ');
@@ -105,3 +94,8 @@ function translateWinddirection(winddirection) {
         case "NNW": return "Nordnordwest";
     }
 }
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const urlState = urlParams.get('state')
+setData(urlState);
