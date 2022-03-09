@@ -8,8 +8,6 @@
   color: white;
   font-size: 2rem;
 }
-
-
 /* Widget */
 
 div.widget
@@ -46,4 +44,16 @@ div.temp
 div.tablecell
 {
   justify-content: space-between;
+}
+
+/* rotating sun */
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(90deg); }
+}
+
+img#weatherIcon{
+  animation: spin 4s linear infinite;
 }

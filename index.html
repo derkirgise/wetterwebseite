@@ -32,11 +32,9 @@
           </g>
           <g>
             <text x="58.502px" y="122.448px" style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:74.392px;">W
-              <tspan x="125.084px 163.987px " y="122.448px 122.448px ">et</tspan>te<tspan x="253.308px " y="122.448px ">
-                r</tspan></text>
+              <tspan x="125.084px 163.987px " y="122.448px 122.448px ">et</tspan>te<tspan x="253.308px" y="122.448px">r</tspan></text>
             <text x="57.377px" y="149.881px"
-              style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:31.078px;">by Superg<tspan x="196.925px "
-                y="149.881px ">r</tspan>uppe</text>
+              style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:31.078px;">by Superg<tspan x="196.925px "y="149.881px ">r</tspan>uppe</text>
           </g>
         </svg>
 
@@ -99,24 +97,26 @@
           <div class="row">
             <div class="col-md-6 col-lg-4">
               <div class="date text-md-start">
-                Dienstag, 01. März 2022
+                <span class="weekdayData"></span>, <span class="fulldateData"></span>
               </div>
               <div class="city text-md-start">
                 <span class="locationData"></span>
               </div>
               <div class="temp text-md-start">
-                <img src="https://s5.postimg.cc/yzcm7htyb/image.png" alt="Ein Bild des Wetters" width="60">
-                18&deg;
+                <img id="weatherIcon" width="60">
+                <span id="temperatureData"></span>&deg;
               </div>
             </div>
-            <div class="col-md-4 m-md-none mt-5 mb-5 d-none d-lg-block">
-              <img src="https://s5.postimg.cc/lifnombwz/mumbai1.png" alt="Ein Bild Ihrer Stadt" width="160">
+            <div class="col-md-4 m-md-none mb-3 mt-3 d-none d-lg-block">
+              <img id="stateIcon" src="" alt="" width="150">
             </div>
             <div class="col-md-6 col-lg-4 date mt-5 mt-md-3 text-md-end">
-              Luftfeuchtigkeit: 1042 hPa<br><br>
-              Windgeschwindigkeit: 42 kmh<br><br>
-              Windrichtung: SW<br><br>
-              Gefühlte Temperatur: 23&deg;<br><br>
+              Die Wetterlage ist <span id="prognosisData"></span><br>
+              Gefühlte Temperatur: <span id="felttemperatureData"></span>&deg;<br>
+              Luftdruck: <span id="pressureData"></span> hPa<br>
+              Luftfeuchtigkeit: <span id="humidityData"></span> %<br>
+              Windgeschwindigkeit: <span id="windspeedData"></span> kmh<br>
+              Windrichtung: <span id="winddirectionData"></span><br><br>
             </div>
           </div>
         </div>
@@ -129,71 +129,71 @@
 
           <div class="d-none d-sm-block">
             <div class="row">
-              <p class="m-2">Wetter Deutschland - Vorhersage für heute, Dienstag 01.03.</p>
+              <p class="m-2">Wetter Deutschland - Vorhersage für heute, <span class="weekdayData"></span> <span class="fulldateData"></span></p>
               <hr class="mb-2">
             </div>
             <div class="row">
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
-                <span>Augsburg</span>
-                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                Augsburg
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Berlin
-                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Bonn
-                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Chemnitz
-                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
 
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Düsseldorf
-                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Dresden
-                <span class="table_smallpic"><img src="images/home/index_smallcloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
-                Freiburg
-                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
-                <span class="table_degree">23&deg;</span>
+                Frankfurt am Main
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Hamburg
-                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
 
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
-                Köln
-                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                Koblenz
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
-                München
-                <span class="table_smallpic"><img src="images/home/index_smallsun.png"></span>
-                <span class="table_degree">23&deg;</span>
+                Mannheim
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Stuttgart
-                <span class="table_smallpic"><img src="images/home/index_smallcloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
               <div class="col-6 col-md-4 col-xl-3 mb-2 mb-md-3 mb-xl-4 d-flex tablecell">
                 Würzburg
-                <span class="table_smallpic"><img src="images/home/index_smallsuncloud.png"></span>
-                <span class="table_degree">23&deg;</span>
+                <span class="table_smallpic"></span>
+                <span class="table_degree"></span>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
         <div class="col-lg-1"></div>
       </div>
 
-      <br><br><br><br>
+      <br><br>
 
       <div>
         <h3 class="text-center">Alles auf einen Blick</h3>
@@ -260,6 +260,9 @@
         </div>
         <div class="col-1"></div>
       </div>
+
+      <br><br>
+
     </div>
   </main>
   <footer>
