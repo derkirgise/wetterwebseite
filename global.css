@@ -129,7 +129,7 @@ body {
 
 .search {
     position: relative;
-    width: 15vw;
+    width: 100%;
   }
   
   .search input {
@@ -162,11 +162,9 @@ body {
   
   .autocomplete{
     position:relative;
-    display: inline-block;
   }̨
   
-  .autocomplete-items {
-    border: 1px solid #d4d4d4;
+  .autocomplete-items { 
     border-bottom: none;
     border-top: none;
     top: 100%;
@@ -174,22 +172,26 @@ body {
     right: 0;
   }
   
-  .autocomplete-items div {
+  .listChild{
     padding: 10px;
-    border-radius: 10px;
     cursor: pointer;
     color: black;
-    background-color: rgba(255, 255, 255, 0.541);;
-    border-bottom: 1px solid #d4d4d4;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid grey;
     width: 100%;
   }
+
+  .listChild:last-of-type{
+    border-bottom: none;
+  }
+
   .autocomplete-items div:hover {
     /*when hovering an item:*/
-    background-color: rgba(255, 255, 255, 1);;
+    background-color: rgb(126, 191, 255) !important;
   }
   .autocomplete-active {
     /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important;
+    background-color: dodgerblue !important;
     color: #ffffff;
   }
   

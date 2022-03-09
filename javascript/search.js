@@ -37,16 +37,17 @@ function autocomplete(inp, arr, callback) {
         containerList = document.createElement("DIV");
         containerList.setAttribute("id", this.id + "autocomplete-list");
         containerList.setAttribute("class", "autocomplete-items");
-        containerList.setAttribute("style", "position: absolute; z-index: 99; width: 14vw;")
+        containerList.setAttribute("style", "position: absolute; z-index: 99; overflow: hidden; width: 100%; border-radius: 20px; border: 2px solid grey;")
         this.parentNode.appendChild(containerList);
         for (i = 0; i < arr.length; i++) {
           if (arr[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             elementList = document.createElement("DIV");
+            elementList.setAttribute('class','listChild');
             elementList.innerHTML = "<strong style='pointer-events:none'>" + arr[i].name.substr(0, val.length) + "</strong>";
             elementList.innerHTML += arr[i].name.substr(val.length);
             elementList.setAttribute('data-searchinformation',JSON.stringify(arr[i]));
             elementList.setAttribute('id',counterid);
-            elementList.setAttribute('style','display:none');
+            elementList.setAttribute('style','display:block');
             counterid++;
                 elementList.addEventListener("click", function(e) {
                 searchinfo = JSON.parse(e.target.dataset.searchinformation);
@@ -56,10 +57,8 @@ function autocomplete(inp, arr, callback) {
                 closeAllLists();
             });
             containerList.appendChild(elementList);
+            if (3==counterid) break;
           }
-        }
-      for (i=0; i<3;i++){
-        document.getElementById(i).setAttribute('style','display:block');
       }
     });
     inp.addEventListener("keydown", function(e) {
