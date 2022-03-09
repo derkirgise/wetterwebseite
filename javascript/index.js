@@ -81,7 +81,7 @@ function getStateIcon(state) {
     }
 
     switch (state) {
-        case "Baden-Württemberg": return new stateIcon("images/Icons/states/Baden-Württemberg.png", "Icon von Baden-Württemberg");
+        case "Baden-Württemberg": return new stateIcon("images/Icons/states/Baden-Wuerttemberg.png", "Icon von Baden-Württemberg");
         case "Bavaria": return new stateIcon("images/Icons/states/Bavaria.png", "Icon von Bayern");
         case "Berlin": return new stateIcon("images/Icons/states/Berlin.png", "Icon von Berlin");
         case "Brandenburg": return new stateIcon("images/Icons/states/Brandenburg.png", "Icon von Brandenburg");

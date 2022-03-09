@@ -3808,7 +3808,7 @@
       "lon": "6.95278"
     },
     "district": "Urban districts of Germany",
-    "name": "Cologne",
+    "name": "Köln",
     "population": "1083498",
     "state": "North Rhine-Westphalia"
   },
@@ -3819,7 +3819,7 @@
       "lon": "9.183"
     },
     "district": "Konstanz",
-    "name": "Constance",
+    "name": "Konstanz",
     "population": "84446",
     "state": "Baden-Württemberg"
   },
@@ -6336,7 +6336,7 @@
       "lat": "48.250",
       "lon": "11.650"
     },
-    "district": "Munich",
+    "district": "München",
     "name": "Garching bei München",
     "population": "17192",
     "state": "Bavaria"
@@ -7953,7 +7953,7 @@
       "lon": "9.717"
     },
     "district": "Hannover",
-    "name": "Hanover",
+    "name": "Hannover",
     "population": "534049",
     "state": "Lower Saxony"
   },
@@ -7964,7 +7964,7 @@
       "lon": "9.70111"
     },
     "district": "Stade",
-    "name": "Hanseatic City of Buxtehude",
+    "name": "Buxtehude",
     "population": "40026",
     "state": "Lower Saxony"
   },
