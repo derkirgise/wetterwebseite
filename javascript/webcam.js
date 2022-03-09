@@ -2,7 +2,11 @@ var bllist = ["BW","BY","BE","BB","HB","HH","HE","MV","NI","NW","RP","SL","SN","
 var blName = ["Baden-Württemberg","Bayern","Berlin","Brandenburg","Bremen","Hamburg","Hessen","Mecklenburg-Vorpommern","Niedersachsen","Nordrhein-Westfalen","Rheinland-Pfalz","Saarland","Sachsen","Sachsen-Anhalt","Schleswig-Holstein","Thüringen"];
 var blApilist = ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Mecklenburg-Western Pomerania","Lower Saxony","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"]
 
-var videolink = ["https://www.youtube.com/embed/55sS4BroQGw?autoplay=1&mute=1",
+
+
+
+
+const videolink = ["https://www.youtube.com/embed/55sS4BroQGw?autoplay=1&mute=1",
 "https://www.youtube.com/embed/fzY1Pcj8XhM?autoplay=1&mute=1",
 "https://www.youtube.com/embed/Qrp9WQegYX4?autoplay=1&mute=1",
 "https://www.panoramablick.com/embed/29106",
@@ -39,17 +43,29 @@ var maplink = ["https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d837.976067
 
 function selectbl(index){
 //index 0 - 15 um land zu wählen
-document.getElementById("mainVid").src = videolink[index]
+console.log(videolink[index]);
+document.getElementById("mainVid").src = videolink[index];
 document.getElementById("mainMap").src = maplink[index];
-document.getElementById("currentBl").innerHTML = blName[index]
+document.getElementById("currentBl").innerHTML = blName[index];
 }
-
-
-const blParameter = urlParams.get("state");
-const queryString = window.location.search;
-
-selectbl(bllist.indexOf(blParameter));
 
 if (localStorage.state != null){
-  selectbl(blApilist.indexOf(blParameter));
+  console.log("HALLLLLLOOOOOO");
+  console.log(blApilist.indexOf(localStorage.state));
+  selectbl(blApilist.indexOf(localStorage.state));
 }
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const urlState = urlParams.get('state')
+
+console.log(urlState);
+
+
+if(urlState != null){
+  selectbl(bllist.indexOf(urlState));
+}
+
+
+
+
