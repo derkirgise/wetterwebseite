@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wetter by supergruppe</title>
+  <link rel="icon" href="images/icon_title.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/b2b612a524.js" crossorigin="anonymous"></script>
+  <script src="javascript/global.js"></script>
+  <link href="global.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet">
+</head>
+
+<body class="no-js">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <svg width="100px" viewBox="0 0 300 160" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+          style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;">
+          <rect id="ArtBoard1" x="0" y="0" width="300" height="160" style="fill:none;" />
+          <g>
+            <path
+              d="M234.531,59.192C225.584,48.904 212.4,42.4 197.699,42.4C197.068,42.4 196.453,42.472 195.829,42.494C185.844,20.29 163.576,4.805 137.651,4.805C105.619,4.805 79.18,28.425 74.604,59.192C70.79,58.028 66.751,57.393 62.565,57.393C39.757,57.393 21.265,75.885 21.265,98.687C21.265,115.078 30.818,129.242 44.66,135.914"
+              style="fill:none;fill-rule:nonzero;stroke:rgb(6,146,205);stroke-width:7.37px;" />
+          </g>
+          <g>
+            <text x="58.502px" y="122.448px" style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:74.392px;">W
+              <tspan x="125.084px 163.987px " y="122.448px 122.448px ">et</tspan>te<tspan x="253.308px" y="122.448px">r</tspan></text>
+            <text x="57.377px" y="149.881px"
+              style="font-family:'SegoeUI', 'Segoe UI', sans-serif;font-size:31.078px;">by Superg<tspan x="196.925px "y="149.881px ">r</tspan>uppe</text>
+          </g>
+        </svg>
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weather.html">Wetter vor Ort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weathermap.html">Wetterkarte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="webcam.html">Live-Webcam</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="stats.html">Statistik</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <noscript class="no-js-info">
+    <div class="container d-flex flex-column justify-content-center align-items-center"><i class="bi bi-filetype-js"
+        style="font-size: 100px;"></i>Bitte JavaScript aktivieren</div>
+  </noscript>
+
+  <main class="container main">
+    <div class="title">
+      <div class="d-flex flex-row align-items-center">
+          <img src="images/stats/bar-chart-outline.svg" alt="Symbol eines Diagramms">
+          <span class="ms-1">Datenschutz</span>
+          <div class="ms-auto">
+              <div class="search">
+                  <form autocomplete="off">
+                      <div class="autocomplete">
+                          <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
+                          <i class="input-icon fas fa-search"></i>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="content">
+    Hier der Inhalt
+  </div>
+  </main>
+  <footer>
+    <ul class="nav d-flex  justify-content-center">
+      <li class="nav-item footer-links"><a href="index.html">HOME</a></li>
+      <li class="nav-item footer-links"><a href="weather.html">WETTER VOR ORT</a></li>
+      <li class="nav-item footer-links"><a href="weathermap.html">WETTERKARTE</a></li>
+      <li class="nav-item footer-links"><a href="webcam.html">LIVE-WEBCAM</a></li>
+      <li class="nav-item footer-links"><a href="stats.html">STATISTIK</a></li>
+    </ul>
+    <div class="d-flex justify-content-center footer-social">
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-facebook"></i>
+    </div>
+    <div class="text-center impressum">
+      <span>David Heftig Marienstraße 20</span><br>
+      <span>89518 Heidenheim</span><br>
+      <span>deftig@suppergruppe.de</span>
+    </div>
+    <div class="d-flex justify-content-center copyright">
+      <span>© 2022 suppergruppe, Inc. All rights reserved.</span>
+    </div>
+  </footer>
+<script src="javascript/api.js"></script>
+<script src="javascript/search.js"></script>
+<script src="javascript/index.js"></script>
+</body>
+</html>
