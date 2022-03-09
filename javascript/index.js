@@ -113,7 +113,7 @@ async function fillTable() {
         let lat, lon;
         let city = tableElements[counter].innerText;
 
-        let response = await fetch("../data/germancities.json");
+        let response = await fetch("data/germancities.json");
         let data = await response.json();
 
         let germancitiesData = data.find(x => x.name == city);

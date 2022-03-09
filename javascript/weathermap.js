@@ -24,7 +24,7 @@ async function setData(shortStatePar){
 
     document.getElementById("stateName").innerHTML = states[index].state;
     document.getElementById("livestream-link").innerHTML = 'Zum Wetterlivestream von '+ states[index].state;
-    document.getElementById("livestream-link").setAttribute('href', '/webcam.html?state='+ states[index].shortState)
+    document.getElementById("livestream-link").setAttribute('href', 'webcam.html?state='+ states[index].shortState)
     
     setDate();
     
