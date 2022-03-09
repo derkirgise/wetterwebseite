@@ -102,7 +102,7 @@ async function setData() {
     document.getElementById("precipitationSum").innerText = `${historyData.day.totalprecip_mm} mm`;
 
     if (calcFrostHours() == 0) {
-        document.getElementById("frostHoursCard").display = "none";
+        document.getElementById("frostHoursCard").style.display = "none";
     } else {
         document.getElementById("frostHours").innerText = `${calcFrostHours()} h`;
     }
