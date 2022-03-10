@@ -11,7 +11,7 @@ function city(name,lat,lon,state)
 // cities-Array wird mit den Daten aus der lokalen JSON beladen
 
 async function getData() {
-    let response = await fetch("../data/germancities.json");
+    let response = await fetch("data/germancities.json");
     let data = await response.json();
 
     for (let id in data)

@@ -2,6 +2,8 @@ let localData;
 let locationData;
 let localTableData;
 
+// Füllt die Seite komplett auf mit Daten.
+
 async function fillSite() {
     fillCityname();
     fillTemperature();
@@ -66,12 +68,16 @@ function translateWinddirection(winddirection) {
     }
 }
 
+//Objekt das zum Auslesen der lokalen JSON (germancities.json) dient
+
 function city(name, lat, lon, state) {
     this.name = name;
     this.lat = lat;
     this.lon = lon;
     this.state = state;
 }
+
+// Liefert path und alt-Text zum Icon für jedes Bundesland
 
 function getStateIcon(state) {
 
@@ -81,7 +87,7 @@ function getStateIcon(state) {
     }
 
     switch (state) {
-        case "Baden-Württemberg": return new stateIcon("images/Icons/states/Baden-Württemberg.png", "Icon von Baden-Württemberg");
+        case "Baden-Württemberg": return new stateIcon("images/Icons/states/Baden-Wuerttemberg.png", "Icon von Baden-Württemberg");
         case "Bavaria": return new stateIcon("images/Icons/states/Bavaria.png", "Icon von Bayern");
         case "Berlin": return new stateIcon("images/Icons/states/Berlin.png", "Icon von Berlin");
         case "Brandenburg": return new stateIcon("images/Icons/states/Brandenburg.png", "Icon von Brandenburg");
@@ -99,9 +105,7 @@ function getStateIcon(state) {
     }
 }
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+// Füllt die Tabelle, macht für jede Stadt eine API-Abfrage und sucht die jeweiligen Icons heraus.
 
 async function fillTable() {
     let tableElements = document.getElementsByClassName("tablecell");
@@ -113,7 +117,7 @@ async function fillTable() {
         let lat, lon;
         let city = tableElements[counter].innerText;
 
-        let response = await fetch("../data/germancities.json");
+        let response = await fetch("data/germancities.json");
         let data = await response.json();
 
         let germancitiesData = data.find(x => x.name == city);
@@ -137,6 +141,8 @@ async function fillTable() {
     }
 }
 
+// Füllt den großen Wettericon
+
 async function fillIcons() {
     let weatherConditionIcon = document.getElementById("weatherIcon");
 
@@ -158,6 +164,7 @@ async function fillIcons() {
 
 }
 
+// Setzt das Datum in der richtigen Formatierung um.
 
 function fillDate() {
     let todaysDate = new Date();
@@ -178,6 +185,8 @@ function fillDate() {
         elements[i].innerHTML = fullDateDE;
     }
 }
+
+// Wetterdetails
 
 function fillDetails() {
     let prognosis = localData.condition.text;
@@ -209,6 +218,7 @@ function fillCityname() {
     }
 }
 
+// Hauptfunktion: API-Fetch und Seite auffüllen.
 
 function getCurrentData() {
     let coords = getCoords();

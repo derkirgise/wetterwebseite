@@ -1,43 +1,42 @@
-let stateName;
-let actualTemp;
-let minTemp;
-let maxTemp;
-let sunrise;
-let sunset;
-let percentageRain;
-let literRainSquareMeters;
-let windDirection;
-let windSpeed;
-let moonphase;
+const localSotrageStates = ["Baden-Württemberg","Bavaria","Berlin","Brandenburg","Bremen","Hamburg","Hesse","Mecklenburg-Western Pomerania","Lower Saxony","North Rhine-Westphalia","Rhineland-Palatinate","Saarland","Saxony","Saxony-Anhalt","Schleswig-Holstein","Thuringia"]
 
+async function getStateData() {
+    return await fetch("data/coordinatesGermanStates.json")
+    .then((response) => response.json());
+}
 
-async function getStateList() {
-    return getStateData();
+async function getMoonTranslationJSON() {
+    return await fetch("data/moon-phase-translation.json")
+    .then((response) => response.json());
 }
 
 async function setData(shortStatePar){
-    
-    console.log(shortStatePar);
-    const states = await getStateList();
-    console.log(states);
+    const states = await getStateData();
     let index = states.findIndex(x => x.shortState === shortStatePar);
     if(index === -1){
-        index = 0;
+        if (localStorage.state != null){
+            index = localSotrageStates.indexOf(localStorage.state);
+          }
+          else{
+              index = 0;
+          }
     }
 
     document.getElementById("stateName").innerHTML = states[index].state;
     document.getElementById("livestream-link").innerHTML = 'Zum Wetterlivestream von '+ states[index].state;
-    document.getElementById("livestream-link").setAttribute('href', '/webcam.html?state='+ states[index].shortState)
+    document.getElementById("livestream-link").setAttribute('href', 'webcam.html?state='+ states[index].shortState)
     
     setDate();
     
     
 
 
-
-    const stateWeatherInfo = await getWeatherState(states[index].lat, states[index].long);
+    const dateToday =  new Date().toISOString().slice(0, 10);
+    const stateWeatherInfo = await getHistoryData(states[index].lat, states[index].long, dateToday);
     
-    document.getElementById('moon-phase').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase;
+    document.getElementById('moon-phase').innerHTML = await translateMoonPhase(stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase);
+
+
     document.getElementById('sunrise').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunrise)+' Uhr';
     document.getElementById('sunset').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunset)+' Uhr';
     document.getElementById('minTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].mintemp_c + ' °C';
@@ -47,7 +46,6 @@ async function setData(shortStatePar){
     document.getElementById('rainAmount').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].totalprecip_in + ' Liter/m<sup>2</sup>';
     const hour = new Date().getHours();
     const image = await getIconInformation(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour]['condition'].code);
-    console.log(image.iconPath);
     document.getElementById('weather-icon').setAttribute('src', image.iconPath); 
     document.getElementById('weather-icon').setAttribute('alt', image.alt);
     document.getElementById('windspeed').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_kph + ' km/h';
@@ -58,7 +56,6 @@ async function setData(shortStatePar){
     
 }
 
-
 async function setDate(){
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -68,8 +65,6 @@ async function setDate(){
     if (mm < 10) mm = '0' + mm;
     document.getElementById('date').innerHTML = dd + '.' + mm + '.' + yyyy;
 }
-
-
 
 function convertTimeToTwentyFourHFormat(timeTwelveH) {
     let [time, addition] = timeTwelveH.split(' ');
@@ -105,3 +100,14 @@ function translateWinddirection(winddirection) {
         case "NNW": return "Nordnordwest";
     }
 }
+
+async function translateMoonPhase(moonPhaseEn){
+    const json = await getMoonTranslationJSON();
+    const index = json.findIndex(x => x.en === moonPhaseEn.toLowerCase());
+    return json[index].de;
+}
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const urlState = urlParams.get('state')
+setData(urlState);

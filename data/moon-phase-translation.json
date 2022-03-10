@@ -1,0 +1,35 @@
+[
+    {
+        "en":"first quarter",
+        "de":"Zunehmender Halbmond"
+    },
+    {
+        "en":"waxing crescent",
+        "de":"Zunehmender Sichelmond"
+    },
+    {
+        "en":"new moon",
+        "de":"Neumond"
+    },
+    {
+        "en":"waning crescent",
+        "de":"Abnehmender Sichelmond"
+    },
+    {
+        "en":"last quarter",
+        "de":"Abnehmender Halbmond"
+    },
+    {
+        "en":"waning gibbous",
+        "de":"Abnehmender Dreiviertelmond"
+    },
+    {
+        "en":"full moon",
+        "de":"Vollmond"
+    },
+    {
+        "en":"waxing gibbous",
+        "de":"Zunehmender Sichelmond"
+    }
+    
+]

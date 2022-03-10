@@ -82,21 +82,26 @@
 
     <main class="container main">
         <div class="title">
-            <div class="d-flex flex-row align-items-center">
+            <div class="row">
+      
+              <div class="d-flex align-items-center text-center justify-content-center justify-content-lg-start col-12 col-lg-9">
                 <img src="images/stats/bar-chart-outline.svg" alt="Symbol eines Diagramms">
                 <span class="ms-1">Statistiken</span>
-                <div class="ms-auto">
-                    <div class="search">
-                        <form autocomplete="off">
-                            <div class="autocomplete">
-                                <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
-                                <i class="input-icon fas fa-search"></i>
-                            </div>
-                        </form>
+              </div>
+      
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-end  col-12 col-lg-3">
+                <div class="search">
+                  <form autocomplete="off">
+                    <div class="autocomplete">
+                      <input id="myInput" class="form-control icon-input" placeholder="Ihre Stadt...">
+                      <i class="input-icon fas fa-search"></i>
                     </div>
+                  </form>
                 </div>
+              </div>
+      
             </div>
-        </div>
+          </div>
         <div class="content">
             <div class="row">
                 <div class="col-3 col-lg-1 d-flex align-items-center justify-content-center">
@@ -105,7 +110,6 @@
                 <div class="col-9 col-lg-11">
                     <h3 id="locationName">Berlin,</h3>
                     <h5>den <b id="historyDate">02.03.2022</b>, <span id="weatherCondition"></span>.</h5>
-                        <!-- <span class="ms-2">Tage</span> -->
                 </div>
             </div>
             <div class="row mt-2">
@@ -249,7 +253,7 @@
                 </div>
                 <div class="row stats-row mt-4 averagestats">
                     <div class="col-lg-3 mt-3 mt-lg-0">
-                        <div
+                        <div id="frostHoursCard"
                             class="card card-warning d-flex align-items-center justify-content-center flex-column frostHoursCard">
                             <img src="images/Icons/snowCrystal.png" alt="Symbol eines Schneekristalls">
                             <div class="warning">
@@ -309,5 +313,4 @@
       </footer>
     <script src="javascript/search.js"></script>
 </body>
-
 </html>
