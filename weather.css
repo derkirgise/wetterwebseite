@@ -128,12 +128,12 @@ p {
     background: #ffffff
 }
 
-.card-weather .weakly-weather {
+.card-weather .hourly-weather {
     background: #ffffff;
     overflow-x: auto
 }
 
-.card-weather .weakly-weather .weakly-weather-item {
+.card-weather .hourly-weather .hourly-weather-item {
     flex: 0 0 14.28%;
     border-right: 1px solid #f2f2f2;
     padding: 1rem;
@@ -145,7 +145,7 @@ p {
     margin-bottom: 0 !important
 }
 
-.card-weather .weakly-weather .weakly-weather-item i {
+.card-weather .hourly-weather .hourly-weather-item i {
     font-size: 1.2rem
 }
 

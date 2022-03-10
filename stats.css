@@ -91,10 +91,6 @@
     display: inline-block !important;
 }
 
-.card-warning {
-    /* background-color: rgba(252, 255, 100, 0.356); */
-}
-
 #vartemp {
     transition: height 5 ease-in;
     height: 40px;
