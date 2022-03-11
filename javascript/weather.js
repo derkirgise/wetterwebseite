@@ -3,6 +3,16 @@ let currentData;
 let forecastData0;
 let forecastData1;
 let forecastData2;
+
+
+//Date.getday() liefert Zahl zwischen 0-6
+function getWeekday(day) {
+    let date = new Date(locationData.localtime);
+    let weekday = translateWeekday((date.getDay()+day)%7);
+    return weekday;
+}
+
+//int von 0-6 in Wochentag
 function translateWeekday(weekday) {
     switch (weekday) {
         case 0: return "Sonntag";
@@ -13,11 +23,6 @@ function translateWeekday(weekday) {
         case 5: return "Freitag";
         case 6: return "Samstag";
     }
-}
-function getWeekday(day) {
-    let date = new Date(locationData.localtime);
-    let weekday = translateWeekday((date.getDay()+day)%7);
-    return weekday;
 }
 
 function convertDate(date) {
@@ -112,8 +117,6 @@ function fillDetails() {
     let feltTemperature = currentData.feelslike_c;
     let currentTemp = currentData.temp_c;
     let weekdayToday = getWeekday(0);
-    let tempTomorrow = forecastData1.day.avgtemp_c;
-    let tempTheDayAfterTomorrow = forecastData2.day.avgtemp_c;
 
     document.getElementById("weather-date").innerHTML = date;
     document.getElementById("weather").innerHTML = weather;
