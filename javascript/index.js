@@ -14,7 +14,7 @@ async function fillSite() {
 }
 
 function translateDay(todaysDay) {
-    if (todaysDay.length = 1) return "0" + todaysDay.toString() + ".";
+    if (todaysDay.length === 1) return "0" + todaysDay.toString() + ".";
     else return todaysDay.toString() + ".";
 }
 

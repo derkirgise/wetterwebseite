@@ -17,7 +17,7 @@ async function getRealTimeData(lat, lon) {
 }
 
 async function getForecastData(lat, lon) {
-    return await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a8a6faad8a9d4a00a22174858220303&lang=de&q=${lat},${lon}`, {
+    return await fetch(`http://api.weatherapi.com/v1/forecast.json?key=a8a6faad8a9d4a00a22174858220303&lang=de&q=${lat},${lon}&days=3`, {
         mode: 'cors',
         headers: {
             'Access-Control-Allow-Origin': '*'
