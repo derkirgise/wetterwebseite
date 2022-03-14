@@ -8,7 +8,7 @@ function city(name,lat,lon,state)
     this.state = state;
 }
 
-// cities-Array wird mit den Daten aus der lokalen JSON beladen
+// cities-Array wird mit den Daten aus der lokalen JSON (germancities.json) beladen
 
 async function getData() {
     let response = await fetch("data/germancities.json");
@@ -22,7 +22,8 @@ async function getData() {
 
 getData();
 
-// Autocomplete-Funktion, die bei Bedienung des Input-Fields aufgerufen wird
+// Autocomplete-Funktion, die bei Bedienung des Input-Fields aufgerufen wird (s. erster addEventListener)
+// Callback-Funktion, die eingefügt werden soll, ist der entsprechende API-Fetch & Daten auf Seite eintragen
 
 function autocomplete(inp, arr, callback) {
     let currentFocus;

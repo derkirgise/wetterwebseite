@@ -2,7 +2,7 @@ let localData;
 let locationData;
 let localTableData;
 
-// Füllt die Seite komplett auf mit Daten.
+// Füllt die Seite komplett auf mit Daten. Wird bei Seitenaufruf und Änderung der Stadt durch getCurrentData() (s. unten) aufgerufen.
 
 async function fillSite() {
     fillCityname();
@@ -186,7 +186,7 @@ function fillDate() {
     }
 }
 
-// Wetterdetails
+// Wetterdetails einfügen
 
 function fillDetails() {
     let prognosis = localData.condition.text;
@@ -204,10 +204,14 @@ function fillDetails() {
     document.getElementById("winddirectionData").innerHTML = winddirection;
 }
 
+// Temperatur einfügen
+
 function fillTemperature() {
     let temperature = localData.temp_c;
     document.getElementById("temperatureData").innerHTML = temperature;
 }
+
+// Stadtnamen einfügen (aus Localstorage)
 
 function fillCityname() {
     let elements;

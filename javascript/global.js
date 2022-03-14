@@ -15,6 +15,9 @@ function getCoords() {
     }
 }
 
+// Liefert auf Basis des Wettercodes (liefert der weatherapi-fetch) den Path und den Alt-Text des entsprechenden Wetters
+// Benutzt hierfür eine eigens erstellte JSON
+
 async function getIconInformation(conditionId) {
     let response = await fetch("data/weather_conditions.json", {
         mode: 'cors',
@@ -36,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // Setzt den Default LocalStorage auf Heidenheim bei erstem Seitenaufruf
+
 function checkLocalStorage(){
     if (!localStorage.cityname){
         let lat, long, cityname, state;
