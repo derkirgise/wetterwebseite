@@ -1,3 +1,7 @@
+
+/**
+ * Speichert Ortsdaten im localStorage 
+ */
 function saveCoords(lat, long,cityname,state) {
     localStorage.setItem('lat', lat);
     localStorage.setItem('long', long);
@@ -5,6 +9,10 @@ function saveCoords(lat, long,cityname,state) {
     localStorage.setItem('state', state);
 }
 
+/**
+ * Ruft die gespeicherten Ortskoordinaten aus dem localStorage ab
+ * @returns 
+ */
 function getCoords() {
     let lat = localStorage.getItem('lat');
     let long = localStorage.getItem('long');
@@ -33,6 +41,11 @@ async function getIconInformation(conditionId) {
     }
 }
 
+/**
+ * Sobald der DOM geladen wurde, wird die Klasse "no-js" entfernt, sodass wenn kein Javascript aktiviert ist
+ * eine Hinweismeldung statt des Seiteninhalts angezeigt wird. Bei deaktiviertem Javascript wird diese Methode nicht aufgerufen
+ * => Javascript-Deaktiviert-Meldung erscheint
+ */
 document.addEventListener("DOMContentLoaded", function(event) {
     document.body.classList.remove("no-js");
 });
