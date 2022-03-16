@@ -92,14 +92,9 @@ footer i:last-child {
 
 .content {
     padding: 15px;
-    /* background-color: rgba(255, 255, 255, 1); */
-    /* filter: brightness(50%); */
     background-color: rgba(255, 255, 255, 1);
     backdrop-filter: blur(10px);
     min-height: 100vh;
-    /* box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 55px 0px rgba(0, 0, 0, 0.75); */
 }
 
 footer .container {
@@ -113,7 +108,7 @@ footer a {
 
 body {
     /* background-color: #76acea; */
-    background-image: url("images/background.jpg");
+    background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
