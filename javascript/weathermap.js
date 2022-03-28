@@ -25,6 +25,8 @@ async function setData(shortStatePar){
     document.getElementById("stateName").innerHTML = states[index].state;
     document.getElementById("livestream-link").innerHTML = 'Zum Wetterlivestream von '+ states[index].state;
     document.getElementById("livestream-link").setAttribute('href', 'webcam.html?state='+ states[index].shortState)
+    document.getElementById("livestream-link1").innerHTML = 'Zum Wetterlivestream von '+ states[index].state;
+    document.getElementById("livestream-link1").setAttribute('href', 'webcam.html?state='+ states[index].shortState)
     
     setDate();
     
@@ -34,7 +36,7 @@ async function setData(shortStatePar){
     const dateToday =  new Date().toISOString().slice(0, 10);
     const stateWeatherInfo = await getHistoryData(states[index].lat, states[index].long, dateToday);
     
-    document.getElementById('moon-phase').innerHTML = await translateMoonPhase(stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase);
+    document.getElementById('moon-phase').innerHTML = await stateWeatherInfo['forecast']['forecastday'][0]['astro'].moon_phase;
 
 
     document.getElementById('sunrise').innerHTML = convertTimeToTwentyFourHFormat(stateWeatherInfo['forecast']['forecastday'][0]['astro'].sunrise)+' Uhr';
@@ -53,7 +55,12 @@ async function setData(shortStatePar){
     document.getElementById('feelTemp').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].feelslike_c + ' °C';
     document.getElementById('rainPercentage').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].will_it_rain + ' %';
     document.getElementById('windDirection').innerHTML = translateWinddirection(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_dir);
-    
+    document.getElementById('windDirection1').innerHTML = translateWinddirection(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_dir);
+    document.getElementById('rainPercentage1').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].will_it_rain + ' %';
+    document.getElementById('windspeed1').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_kph + ' km/h';
+    document.getElementById('windDirection1').innerHTML = translateWinddirection(stateWeatherInfo['forecast']['forecastday'][0]['hour'][hour].wind_dir);
+    document.getElementById('rainAmount1').innerHTML = stateWeatherInfo['forecast']['forecastday'][0]['day'].totalprecip_in + ' Liter/m<sup>2</sup>';
+
 }
 
 async function setDate(){

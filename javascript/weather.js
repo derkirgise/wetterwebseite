@@ -25,6 +25,7 @@ function translateWeekday(weekday) {
     }
 }
 
+//Format: YYYY-MM-DD zu DD.MM.YYYY
 function convertDate(date) {
     let year = date.substring(0,4);
     let month = date.substring(5,7);
@@ -34,57 +35,101 @@ function convertDate(date) {
     return result;
 }
 
+//3-stündige Temperatur einfügen
 async function fillHourlyTemp() {
     let time600 = forecastData0.hour[6].temp_c;
     let time600iconInformation = await getIconInformation(forecastData0.hour[6].condition.code);
     let time600icon =  document.getElementById("time600icon");
-    time600icon.src = time600iconInformation.iconPath;
-    time600icon.alt = time600iconInformation.alt;
+    if (forecastData0.hour[6].is_day==1){
+        time600icon.src = time600iconInformation.iconPath;
+        time600icon.alt = time600iconInformation.alt;
+    }
+    else{
+        time600icon.src = "images/Icons/moon.png";
+        time600icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time600").innerHTML = time600 + "°";
 
     let time900 = forecastData0.hour[9].temp_c;
     let time900iconInformation = await getIconInformation(forecastData0.hour[9].condition.code);
     let time900icon =  document.getElementById("time900icon");
-    time900icon.src = time900iconInformation.iconPath;
-    time900icon.alt = time900iconInformation.alt;
+    if (forecastData0.hour[9].is_day==1){
+        time900icon.src = time900iconInformation.iconPath;
+        time900icon.alt = time900iconInformation.alt;
+    }
+    else{
+        time900icon.src = "images/Icons/moon.png";
+        time900icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time900").innerHTML = time900 + "°";
 
     let time1200 = forecastData0.hour[12].temp_c;
     let time1200iconInformation = await getIconInformation(forecastData0.hour[12].condition.code);
     let time1200icon =  document.getElementById("time1200icon");
-    time1200icon.src = time1200iconInformation.iconPath;
-    time1200icon.alt = time1200iconInformation.alt;
+    if (forecastData0.hour[12].is_day==1){
+        time1200icon.src = time1200iconInformation.iconPath;
+        time1200icon.alt = time1200iconInformation.alt;
+    }
+    else{
+        time1200icon.src = "images/Icons/moon.png";
+        time1200icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time1200").innerHTML = time1200 + "°";
 
     let time1500 = forecastData0.hour[15].temp_c;
     let time1500iconInformation = await getIconInformation(forecastData0.hour[15].condition.code);
     let time1500icon =  document.getElementById("time1500icon");
-    time1500icon.src = time1500iconInformation.iconPath;
-    time1500icon.alt = time1500iconInformation.alt;
+    if (forecastData0.hour[15].is_day==1){
+        time1500icon.src = time1500iconInformation.iconPath;
+        time1500icon.alt = time1500iconInformation.alt;
+    }
+    else{
+        time1500icon.src = "images/Icons/moon.png";
+        time1500icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time1500").innerHTML = time1500 + "°";
 
     let time1800 = forecastData0.hour[18].temp_c;
     let time1800iconInformation = await getIconInformation(forecastData0.hour[18].condition.code);
     let time1800icon =  document.getElementById("time1800icon");
-    time1800icon.src = time1800iconInformation.iconPath;
-    time1800icon.alt = time1800iconInformation.alt;
+    if (forecastData0.hour[18].is_day==1){
+        time1800icon.src = time1800iconInformation.iconPath;
+        time1800icon.alt = time1800iconInformation.alt;
+    }
+    else{
+        time1800icon.src = "images/Icons/moon.png";
+        time1800icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time1800").innerHTML = time1800 + "°";
 
     let time2100 = forecastData0.hour[21].temp_c;
     let time2100iconInformation = await getIconInformation(forecastData0.hour[21].condition.code);
     let time2100icon =  document.getElementById("time2100icon");
-    time2100icon.src = time2100iconInformation.iconPath;
-    time2100icon.alt = time2100iconInformation.alt;
+    if (forecastData0.hour[21].is_day==1){
+        time2100icon.src = time2100iconInformation.iconPath;
+        time2100icon.alt = time2100iconInformation.alt;
+    }
+    else{
+        time2100icon.src = "images/Icons/moon.png";
+        time2100icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time2100").innerHTML = time2100 + "°";
 
     let time0000 = forecastData1.hour[0].temp_c;
     let time0000iconInformation = await getIconInformation(forecastData0.hour[0].condition.code);
     let time0000icon =  document.getElementById("time0000icon");
-    time0000icon.src = time0000iconInformation.iconPath;
-    time0000icon.alt = time0000iconInformation.alt;
+    if (forecastData1.hour[0].is_day==1){
+        time0000icon.src = time0000iconInformation.iconPath;
+        time0000icon.alt = time0000iconInformation.alt;
+    }
+    else{
+        time0000icon.src = "images/Icons/moon.png";
+        time0000icon.alt = "Der Icon des Mondes.";
+    }
     document.getElementById("time0000").innerHTML = time0000 + "°";
 }
 
+//Daten für Vorhersage einfügen
 async function fillForecastDetails() {
     let weekdayTomorrow = getWeekday(1);
     let weekdayTheDayAfterTomorrow = getWeekday(2);
@@ -108,6 +153,8 @@ async function fillForecastDetails() {
     document.getElementById("weekday-tomorrow").innerHTML = weekdayTomorrow + ", der " + dateTomorrow;
     document.getElementById("weekday-day-after-tomorrow").innerHTML = weekdayTheDayAfterTomorrow + ", der " + dateTheDayAfterTomorrow;
 }
+
+//restliche Daten, wie Ort, aktuelle Temperatur etc. einfügen
 function fillDetails() {
     let date = convertDate(locationData.localtime);
     let weather = currentData.condition.text;
@@ -120,7 +167,7 @@ function fillDetails() {
 
     document.getElementById("weather-date").innerHTML = date;
     document.getElementById("weather").innerHTML = weather;
-    document.getElementById("weather-location").innerHTML = locationData.name;
+    document.getElementById("weather-location").innerHTML = localStorage.cityname;
     document.getElementById("pressure").innerHTML = pressure + ' hPa';
     document.getElementById("humidity").innerHTML = humidity + '%';
     document.getElementById("uvIndex").innerHTML = uvIndex;
@@ -129,7 +176,7 @@ function fillDetails() {
     document.getElementById("weekday-today").innerHTML = weekdayToday;
 }
 
-
+//API-Fetch
 function getData() {
     let coords = getCoords();
     getForecastData(coords.lat, coords.lon)
